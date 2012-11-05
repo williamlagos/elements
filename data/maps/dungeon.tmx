@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="64" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="dungeontiles" tilewidth="32" tileheight="32">
+  <image source="dungeontiles.png" width="128" height="256"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="64" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzt2DEKgDAQRNElXsDC+59V7EJIomsiY5Y/MJWj+BAtTGaWhFXnuoej0d6xfLM7Wl5THfz48eMf8ddamvNG899tent18OOfZcNvtlWKP66/3ODHH8n/pJ7vw0r+L4offwT/yD+/CP5ZVQc/fs+77dm0div43z7Pu3Px48ePH/9//MqqcwL5AT6s
+  </data>
+ </layer>
+ <objectgroup name="collision" width="64" height="32">
+  <object x="1024" y="737" width="32" height="255"/>
+  <object x="2" y="5" width="1022" height="25"/>
+  <object x="2" y="33" width="30" height="988"/>
+  <object x="34" y="993" width="1022" height="33"/>
+  <object x="225" y="34" width="30" height="509"/>
+  <object x="258" y="515" width="284" height="27"/>
+  <object x="514" y="419" width="28" height="93"/>
+  <object x="515" y="36" width="29" height="283"/>
+  <object x="547" y="195" width="155" height="28"/>
+  <object x="803" y="194" width="91" height="28"/>
+  <object x="898" y="34" width="29" height="635"/>
+  <object x="450" y="641" width="445" height="30"/>
+  <object x="641" y="354" width="159" height="158"/>
+  <object x="163" y="771" width="30" height="222"/>
+  <object x="196" y="770" width="187" height="29"/>
+  <object x="450" y="769" width="222" height="30"/>
+  <object x="642" y="804" width="29" height="185"/>
+  <object x="770" y="770" width="157" height="31"/>
+  <object x="898" y="804" width="29" height="187"/>
+ </objectgroup>
+</map>

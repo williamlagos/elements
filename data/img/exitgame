@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:56d99379c3671fb28e241d774f1ad724$ -->
+<TextureAtlas imagePath="exitgame.png">
+    <SubTexture name="exit" x="2" y="2" width="444" height="74"/>
+</TextureAtlas>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:252d02f40b63c403df8c3f71ae3e983f$ -->
+<TextureAtlas imagePath="spaceship.png">
+    <SubTexture name="spaceship" x="2" y="2" width="136" height="152"/>
+</TextureAtlas>
