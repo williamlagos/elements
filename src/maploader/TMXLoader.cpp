@@ -366,7 +366,9 @@ void TMXLoader::convertWorldToCell(float x, float y, int&col, int& row)
 
 void TMXLoader::addImageObject(CImage* img, int layer)
 {
-    m_Images.push_back(ImageObject { layer, img });
+    ImageObject i;
+    i.layer = layer; i.img = img;
+    m_Images.push_back(i);
 }
 
 /*

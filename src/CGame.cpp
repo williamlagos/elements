@@ -71,7 +71,7 @@ void CGame::init(const char* title, int width, int height, int bpp, bool fullscr
 
     printAttributes();
     
-	printf("Game Initialised Succesfully\n");
+	cout << "Game Initialised Succesfully\n";
 }
 
 
