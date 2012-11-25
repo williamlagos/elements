@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+       archiveVersion = 1;
+       classes = {
+       };
+       objectVersion = 46;
+       objects = {
+
+/* Begin PBXAggregateTarget section */
+              26F67C1198C741CCADD49215 /* ALL_BUILD */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 7717775D9BF74A509A65B56B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildPhases = (
+                            5AEF21937AC84F51B7C42C03 /* CMake Rules */,
+                     );
+                     dependencies = (
+                            7041834A0CDA4B2EA9C32B52 /* PBXTargetDependency */,
+                            54B29134C2E04E74847ECE5A /* PBXTargetDependency */,
+                     );
+                     name = ALL_BUILD;
+                     productName = ALL_BUILD;
+              };
+              FFFBCF35DC0449F3AAEBBBEA /* ZERO_CHECK */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = C0FDEFCE94954B648520BCC8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+                     buildPhases = (
+                            E7A3D44AC4414D55A347E8BF /* CMake Rules */,
+                     );
+                     dependencies = (
+                     );
+                     name = ZERO_CHECK;
+                     productName = ZERO_CHECK;
+              };
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+885DCE0A6A324F7A82520B6A /* /Users/SV/Develop/invaders/src/CFont.cpp */ = {isa = PBXBuildFile; fileRef = FD600C3F6B2C4067810CA5A1 /* /Users/SV/Develop/invaders/src/CFont.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+21D6EF7F08AB446BB19A3948 /* /Users/SV/Develop/invaders/src/CGame.cpp */ = {isa = PBXBuildFile; fileRef = 3F1C32AC261D497D8534BADD /* /Users/SV/Develop/invaders/src/CGame.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+D4EB849C68B34E8EA957E13D /* /Users/SV/Develop/invaders/src/CImage.cpp */ = {isa = PBXBuildFile; fileRef = F98F5275FD234CA7A903EBBD /* /Users/SV/Develop/invaders/src/CImage.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+CF132951854945A8A25FDFDE /* /Users/SV/Develop/invaders/src/CMultiImage.cpp */ = {isa = PBXBuildFile; fileRef = 8831A889C2A041A8AC2C91FD /* /Users/SV/Develop/invaders/src/CMultiImage.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+0EDBD07F68804C6BA979BE99 /* /Users/SV/Develop/invaders/src/CSprite.cpp */ = {isa = PBXBuildFile; fileRef = 171C863586904389AF88C726 /* /Users/SV/Develop/invaders/src/CSprite.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+20B67C640CBC40A5B02F3635 /* /Users/SV/Develop/invaders/src/main.cpp */ = {isa = PBXBuildFile; fileRef = C1D4202D39844616BD6E22A7 /* /Users/SV/Develop/invaders/src/main.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+13D8F2625C6C47899EF1ACD6 /* /Users/SV/Develop/invaders/src/MenuState.cpp */ = {isa = PBXBuildFile; fileRef = DBBF397EA588422DAA04B00B /* /Users/SV/Develop/invaders/src/MenuState.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+3628F6867D2B4FD7A4764730 /* /Users/SV/Develop/invaders/src/PauseState.cpp */ = {isa = PBXBuildFile; fileRef = E75A2D06ABB64BDAABBFFD43 /* /Users/SV/Develop/invaders/src/PauseState.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+4CABA8578C474A8192B578D2 /* /Users/SV/Develop/invaders/src/PlayState.cpp */ = {isa = PBXBuildFile; fileRef = 4A87DA0D7E2D41F1AC445B85 /* /Users/SV/Develop/invaders/src/PlayState.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+6B3192E8B6D9489CA9ACF8E0 /* /Users/SV/Develop/invaders/src/TextureManager.cpp */ = {isa = PBXBuildFile; fileRef = BEA40E625706460986136B2E /* /Users/SV/Develop/invaders/src/TextureManager.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+821F38C5D3C84ECDBCD33E51 /* /Users/SV/Develop/invaders/src/maploader/base64.cpp */ = {isa = PBXBuildFile; fileRef = 707A5172AB65406E8CA86B38 /* /Users/SV/Develop/invaders/src/maploader/base64.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+24393CF780454DC98F027B87 /* /Users/SV/Develop/invaders/src/maploader/TMXLoader.cpp */ = {isa = PBXBuildFile; fileRef = 34C0B57020F64841B9A43D8C /* /Users/SV/Develop/invaders/src/maploader/TMXLoader.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+3B0BA93C445345E1B3572F85 /* /Users/SV/Develop/invaders/src/tinyxml/tinystr.cpp */ = {isa = PBXBuildFile; fileRef = FAFC33FE3A654E4988F7D3C8 /* /Users/SV/Develop/invaders/src/tinyxml/tinystr.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+4B40F6325AC544DD84652C53 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxml.cpp */ = {isa = PBXBuildFile; fileRef = 7506EE592D9E4FFBB1A9075C /* /Users/SV/Develop/invaders/src/tinyxml/tinyxml.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+FCF7C15B88924DBBA146626D /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlerror.cpp */ = {isa = PBXBuildFile; fileRef = E496C7AF1F5B4C5293B5168A /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlerror.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+C37CD92877BE48EABA39B257 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlparser.cpp */ = {isa = PBXBuildFile; fileRef = 8D65E37CC894428AB79A0520 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlparser.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+91E830067A444DCB8772554A /* /Users/SV/Develop/invaders/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 3E7B2081686B4D88BE34751E /* /Users/SV/Develop/invaders/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+              A5648DD6511E4AA2AA23F9F8 /*  */ = {
+                     isa = PBXBuildStyle;
+              };
+              98D07F0785E74215AD3EAC49 /* Debug */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Debug;
+              };
+              2ED3129C2CB0495BACAFCEFE /* Release */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Release;
+              };
+              0819BB1C209949C5BD73A626 /* MinSizeRel */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = MinSizeRel;
+              };
+              203263AE276D4980BC90D9B8 /* RelWithDebInfo */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+              4FB171D3F7754652B67E2CA4 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 7632556CE168468AB5F012E3 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = FFFBCF35DC0449F3AAEBBBEA;
+                     remoteInfo = ZERO_CHECK;
+              };
+              C8F741F804414A0FA54A0BDF /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 7632556CE168468AB5F012E3 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 6974DFDCE6314F5E8BD90DA2;
+                     remoteInfo = invaders;
+              };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+3E7B2081686B4D88BE34751E /* /Users/SV/Develop/invaders/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+FD600C3F6B2C4067810CA5A1 /* /Users/SV/Develop/invaders/src/CFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "CFont.cpp"; path = "src/CFont.cpp"; sourceTree = SOURCE_ROOT; };
+3F1C32AC261D497D8534BADD /* /Users/SV/Develop/invaders/src/CGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "CGame.cpp"; path = "src/CGame.cpp"; sourceTree = SOURCE_ROOT; };
+F98F5275FD234CA7A903EBBD /* /Users/SV/Develop/invaders/src/CImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "CImage.cpp"; path = "src/CImage.cpp"; sourceTree = SOURCE_ROOT; };
+8831A889C2A041A8AC2C91FD /* /Users/SV/Develop/invaders/src/CMultiImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "CMultiImage.cpp"; path = "src/CMultiImage.cpp"; sourceTree = SOURCE_ROOT; };
+171C863586904389AF88C726 /* /Users/SV/Develop/invaders/src/CSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "CSprite.cpp"; path = "src/CSprite.cpp"; sourceTree = SOURCE_ROOT; };
+C1D4202D39844616BD6E22A7 /* /Users/SV/Develop/invaders/src/main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "main.cpp"; path = "src/main.cpp"; sourceTree = SOURCE_ROOT; };
+DBBF397EA588422DAA04B00B /* /Users/SV/Develop/invaders/src/MenuState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "MenuState.cpp"; path = "src/MenuState.cpp"; sourceTree = SOURCE_ROOT; };
+E75A2D06ABB64BDAABBFFD43 /* /Users/SV/Develop/invaders/src/PauseState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "PauseState.cpp"; path = "src/PauseState.cpp"; sourceTree = SOURCE_ROOT; };
+4A87DA0D7E2D41F1AC445B85 /* /Users/SV/Develop/invaders/src/PlayState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "PlayState.cpp"; path = "src/PlayState.cpp"; sourceTree = SOURCE_ROOT; };
+BEA40E625706460986136B2E /* /Users/SV/Develop/invaders/src/TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "TextureManager.cpp"; path = "src/TextureManager.cpp"; sourceTree = SOURCE_ROOT; };
+707A5172AB65406E8CA86B38 /* /Users/SV/Develop/invaders/src/maploader/base64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "base64.cpp"; path = "src/maploader/base64.cpp"; sourceTree = SOURCE_ROOT; };
+34C0B57020F64841B9A43D8C /* /Users/SV/Develop/invaders/src/maploader/TMXLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "TMXLoader.cpp"; path = "src/maploader/TMXLoader.cpp"; sourceTree = SOURCE_ROOT; };
+FAFC33FE3A654E4988F7D3C8 /* /Users/SV/Develop/invaders/src/tinyxml/tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "tinystr.cpp"; path = "src/tinyxml/tinystr.cpp"; sourceTree = SOURCE_ROOT; };
+7506EE592D9E4FFBB1A9075C /* /Users/SV/Develop/invaders/src/tinyxml/tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "tinyxml.cpp"; path = "src/tinyxml/tinyxml.cpp"; sourceTree = SOURCE_ROOT; };
+E496C7AF1F5B4C5293B5168A /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "tinyxmlerror.cpp"; path = "src/tinyxml/tinyxmlerror.cpp"; sourceTree = SOURCE_ROOT; };
+8D65E37CC894428AB79A0520 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "tinyxmlparser.cpp"; path = "src/tinyxml/tinyxmlparser.cpp"; sourceTree = SOURCE_ROOT; };
+C5B88F27180744F0ACCDF06F /* invaders */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = invaders; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+              FA19D46D643945D887DBACC2  = {
+                     isa = PBXGroup;
+                     children = (
+                            DCC8910189674D7A8F00574B /* Sources */,
+                            DA9434C2AC8F464A9A9DD7CA /* Resources */,
+                            C1C72B3D461C48BFB3D32BEF /* Products */,
+                     );
+                     sourceTree = "<group>";
+              };
+              DCC8910189674D7A8F00574B /* Sources */ = {
+                     isa = PBXGroup;
+                     children = (
+                            919F018FDC6D48939B5B6EFE /* ALL_BUILD */,
+                            50FBF52D8D324E88866CD7FF /* ZERO_CHECK */,
+                            0970E955FD8E491D99535897 /* invaders */,
+                     );
+                     name = Sources;
+                     sourceTree = "<group>";
+              };
+              DA9434C2AC8F464A9A9DD7CA /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              919F018FDC6D48939B5B6EFE /* ALL_BUILD */ = {
+                     isa = PBXGroup;
+                     children = (
+                            C80F64D2EB8E430C8838A43D /* CMake Rules */,
+                            3E7B2081686B4D88BE34751E /* /Users/SV/Develop/invaders/CMakeLists.txt */,
+                     );
+                     name = ALL_BUILD;
+                     sourceTree = "<group>";
+              };
+              C80F64D2EB8E430C8838A43D /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              50FBF52D8D324E88866CD7FF /* ZERO_CHECK */ = {
+                     isa = PBXGroup;
+                     children = (
+                            FA1DEE6AE8894B3FBF984B3F /* CMake Rules */,
+                            3E7B2081686B4D88BE34751E /* /Users/SV/Develop/invaders/CMakeLists.txt */,
+                     );
+                     name = ZERO_CHECK;
+                     sourceTree = "<group>";
+              };
+              FA1DEE6AE8894B3FBF984B3F /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              0970E955FD8E491D99535897 /* invaders */ = {
+                     isa = PBXGroup;
+                     children = (
+                            7CA73BB94E174AD5980E247D /* Source Files */,
+                            3E7B2081686B4D88BE34751E /* /Users/SV/Develop/invaders/CMakeLists.txt */,
+                     );
+                     name = invaders;
+                     sourceTree = "<group>";
+              };
+              7CA73BB94E174AD5980E247D /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            FD600C3F6B2C4067810CA5A1 /* /Users/SV/Develop/invaders/src/CFont.cpp */,
+                            3F1C32AC261D497D8534BADD /* /Users/SV/Develop/invaders/src/CGame.cpp */,
+                            F98F5275FD234CA7A903EBBD /* /Users/SV/Develop/invaders/src/CImage.cpp */,
+                            8831A889C2A041A8AC2C91FD /* /Users/SV/Develop/invaders/src/CMultiImage.cpp */,
+                            171C863586904389AF88C726 /* /Users/SV/Develop/invaders/src/CSprite.cpp */,
+                            C1D4202D39844616BD6E22A7 /* /Users/SV/Develop/invaders/src/main.cpp */,
+                            DBBF397EA588422DAA04B00B /* /Users/SV/Develop/invaders/src/MenuState.cpp */,
+                            E75A2D06ABB64BDAABBFFD43 /* /Users/SV/Develop/invaders/src/PauseState.cpp */,
+                            4A87DA0D7E2D41F1AC445B85 /* /Users/SV/Develop/invaders/src/PlayState.cpp */,
+                            BEA40E625706460986136B2E /* /Users/SV/Develop/invaders/src/TextureManager.cpp */,
+                            707A5172AB65406E8CA86B38 /* /Users/SV/Develop/invaders/src/maploader/base64.cpp */,
+                            34C0B57020F64841B9A43D8C /* /Users/SV/Develop/invaders/src/maploader/TMXLoader.cpp */,
+                            FAFC33FE3A654E4988F7D3C8 /* /Users/SV/Develop/invaders/src/tinyxml/tinystr.cpp */,
+                            7506EE592D9E4FFBB1A9075C /* /Users/SV/Develop/invaders/src/tinyxml/tinyxml.cpp */,
+                            E496C7AF1F5B4C5293B5168A /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlerror.cpp */,
+                            8D65E37CC894428AB79A0520 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlparser.cpp */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              C1C72B3D461C48BFB3D32BEF /* Products */ = {
+                     isa = PBXGroup;
+                     children = (
+                            C5B88F27180744F0ACCDF06F /* invaders */,
+                     );
+                     name = Products;
+                     sourceTree = "<group>";
+              };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+              6974DFDCE6314F5E8BD90DA2 /* invaders */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = 96F6BB199E914FC3B5910F9F /* Build configuration list for PBXNativeTarget "invaders" */;
+                     buildPhases = (
+                            E88F553049F74A89B059CC69 /* Sources */,
+                            187FA4A82D2949329A014317 /* CMake PostBuild Rules */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                            7041834A0CDA4B2EA9C32B52 /* PBXTargetDependency */,
+                     );
+                     name = invaders;
+                     productName = invaders;
+                     productReference = C5B88F27180744F0ACCDF06F /* invaders */;
+                     productType = "com.apple.product-type.tool";
+              };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+              7632556CE168468AB5F012E3 /* Project object */ = {
+                     isa = PBXProject;
+                     attributes = {
+                            BuildIndependentTargetsInParallel = YES;
+                     };
+                     buildConfigurationList = 0DB4480D89494E1BA2B8071A /* Build configuration list for PBXProject  "INVADERS" */;
+                     buildSettings = {
+                     };
+                     buildStyles = (
+                            98D07F0785E74215AD3EAC49 /* Debug */,
+                            2ED3129C2CB0495BACAFCEFE /* Release */,
+                            0819BB1C209949C5BD73A626 /* MinSizeRel */,
+                            203263AE276D4980BC90D9B8 /* RelWithDebInfo */,
+                     );
+                     compatibilityVersion = "Xcode 3.2";
+                     hasScannedForEncodings = 0;
+                     mainGroup = FA19D46D643945D887DBACC2;
+                     projectDirPath = ".";
+                     projectRoot = "";
+                     targets = (
+                            26F67C1198C741CCADD49215 /* ALL_BUILD */,
+                            FFFBCF35DC0449F3AAEBBBEA /* ZERO_CHECK */,
+                            6974DFDCE6314F5E8BD90DA2 /* invaders */,
+                     );
+              };
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+              E78947FDA71C42AA86A9EBAA /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              5AEF21937AC84F51B7C42C03 /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/SV/Develop/invaders -f /Users/SV/Develop/invaders/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+              98420284083849FBBDC13EF8 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              E7A3D44AC4414D55A347E8BF /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/SV/Develop/invaders -f /Users/SV/Develop/invaders/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+              187FA4A82D2949329A014317 /* CMake PostBuild Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake PostBuild Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/SV/Develop/invaders -f /Users/SV/Develop/invaders/CMakeScripts/invaders_postBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+              E88F553049F74A89B059CC69 /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            885DCE0A6A324F7A82520B6A /* /Users/SV/Develop/invaders/src/CFont.cpp */,
+                            21D6EF7F08AB446BB19A3948 /* /Users/SV/Develop/invaders/src/CGame.cpp */,
+                            D4EB849C68B34E8EA957E13D /* /Users/SV/Develop/invaders/src/CImage.cpp */,
+                            CF132951854945A8A25FDFDE /* /Users/SV/Develop/invaders/src/CMultiImage.cpp */,
+                            0EDBD07F68804C6BA979BE99 /* /Users/SV/Develop/invaders/src/CSprite.cpp */,
+                            20B67C640CBC40A5B02F3635 /* /Users/SV/Develop/invaders/src/main.cpp */,
+                            13D8F2625C6C47899EF1ACD6 /* /Users/SV/Develop/invaders/src/MenuState.cpp */,
+                            3628F6867D2B4FD7A4764730 /* /Users/SV/Develop/invaders/src/PauseState.cpp */,
+                            4CABA8578C474A8192B578D2 /* /Users/SV/Develop/invaders/src/PlayState.cpp */,
+                            6B3192E8B6D9489CA9ACF8E0 /* /Users/SV/Develop/invaders/src/TextureManager.cpp */,
+                            821F38C5D3C84ECDBCD33E51 /* /Users/SV/Develop/invaders/src/maploader/base64.cpp */,
+                            24393CF780454DC98F027B87 /* /Users/SV/Develop/invaders/src/maploader/TMXLoader.cpp */,
+                            3B0BA93C445345E1B3572F85 /* /Users/SV/Develop/invaders/src/tinyxml/tinystr.cpp */,
+                            4B40F6325AC544DD84652C53 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxml.cpp */,
+                            FCF7C15B88924DBBA146626D /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlerror.cpp */,
+                            C37CD92877BE48EABA39B257 /* /Users/SV/Develop/invaders/src/tinyxml/tinyxmlparser.cpp */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+              7041834A0CDA4B2EA9C32B52 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = FFFBCF35DC0449F3AAEBBBEA /* ZERO_CHECK */;
+                     targetProxy = 4FB171D3F7754652B67E2CA4 /* PBXContainerItemProxy */;
+              };
+              54B29134C2E04E74847ECE5A /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 6974DFDCE6314F5E8BD90DA2 /* invaders */;
+                     targetProxy = C8F741F804414A0FA54A0BDF /* PBXContainerItemProxy */;
+              };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+              B799F717658E4CAC94B1C398 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/SV/Develop/invaders/build;
+                     };
+                     name = Debug;
+              };
+              09CB28C059214A55BEDB7713 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/SV/Develop/invaders/build;
+                     };
+                     name = Release;
+              };
+              79EEC3F09C7241A4A80D3D50 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/SV/Develop/invaders/build;
+                     };
+                     name = MinSizeRel;
+              };
+              7C11627E72C74F54B6C4F9A8 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Developer/SDKs/MacOSX10.6.sdk";
+                            SYMROOT = /Users/SV/Develop/invaders/build;
+                     };
+                     name = RelWithDebInfo;
+              };
+              8FBA8A7063E6400ABD183599 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              8110C956B71A4B8CBCCA72CF /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              CC0E35E2D85F42339AAFF392 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              4C752C509F0C4C939E09C78E /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              74FF0CADF4564A2F926884E7 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              2D789DF6F25640BB9A0C0AD2 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              CB6CE537BF4346718C429ECF /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              D1EE4F3B22454572A9D737EE /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = "";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              B31EE5FE7BDD4172AF2F7666 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = " /Users/SV/Develop/invaders/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/SV/Develop/invaders/lib";
+                            OTHER_CFLAGS = "    ";
+                            OTHER_CPLUSPLUSFLAGS = "    ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names -lSDL -lSDL_image -lGL -lGLU";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = invaders;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              837753B0E4FD4688954BC726 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = " /Users/SV/Develop/invaders/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/SV/Develop/invaders/lib";
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names -lSDL -lSDL_image -lGL -lGLU";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = invaders;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              5FD76C16CD81467E905466E8 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = " /Users/SV/Develop/invaders/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/SV/Develop/invaders/lib";
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names -lSDL -lSDL_image -lGL -lGLU";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = invaders;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              E1683DB58540449488C958DA /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            HEADER_SEARCH_PATHS = (/Users/SV/Develop/invaders/include, /Users/SV/Develop/invaders/include/sdl, /Users/SV/Develop/invaders/include/tinyxml, /Users/SV/Develop/invaders/include/maploader, );
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = " /Users/SV/Develop/invaders/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/SV/Develop/invaders/lib";
+                            OTHER_CFLAGS = "       -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names -lSDL -lSDL_image -lGL -lGLU";
+                            OTHER_REZFLAGS = "";
+                            PREBINDING = NO;
+                            PRODUCT_NAME = invaders;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/SV/Develop/invaders;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+              0DB4480D89494E1BA2B8071A /* Build configuration list for PBXProject  "INVADERS" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            B799F717658E4CAC94B1C398 /* Debug */,
+                            09CB28C059214A55BEDB7713 /* Release */,
+                            79EEC3F09C7241A4A80D3D50 /* MinSizeRel */,
+                            7C11627E72C74F54B6C4F9A8 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              7717775D9BF74A509A65B56B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            8FBA8A7063E6400ABD183599 /* Debug */,
+                            8110C956B71A4B8CBCCA72CF /* Release */,
+                            CC0E35E2D85F42339AAFF392 /* MinSizeRel */,
+                            4C752C509F0C4C939E09C78E /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              C0FDEFCE94954B648520BCC8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            74FF0CADF4564A2F926884E7 /* Debug */,
+                            2D789DF6F25640BB9A0C0AD2 /* Release */,
+                            CB6CE537BF4346718C429ECF /* MinSizeRel */,
+                            D1EE4F3B22454572A9D737EE /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              96F6BB199E914FC3B5910F9F /* Build configuration list for PBXNativeTarget "invaders" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            B31EE5FE7BDD4172AF2F7666 /* Debug */,
+                            837753B0E4FD4688954BC726 /* Release */,
+                            5FD76C16CD81467E905466E8 /* MinSizeRel */,
+                            E1683DB58540449488C958DA /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+/* End XCConfigurationList section */
+       };
+       rootObject = 7632556CE168468AB5F012E3;
+}
