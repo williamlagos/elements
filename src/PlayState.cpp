@@ -26,12 +26,13 @@ void PlayState::init()
 	count = 0;
 	background = new CImage();
     background->loadImage("data/maps/black.png");
-	while(count != 7){
+	while(count != ENEMIES_LIMIT){
 		CSprite* enemy = new CSprite();
 		enemy->loadSpriteSparrowXML("data/img/bug.xml");
-		if(count > 2) vertical = 3;
-		enemy->setPosition((count%3)*125,50*vertical);
+		if(count == (ENEMIES_LIMIT-1)/2) vertical = 3;
+		enemy->setPosition((count%6)*60,30*vertical);
 		enemy->setAnimRate(0);
+		enemy->setScale(0.5);
 		enemies[count] = enemy;
 		count++;
 	}
@@ -108,14 +109,14 @@ void PlayState::update(CGame* game)
 {
     int x = (int) enemies[0]->getX();
 	count = 0;
-	while(count != 7){
+	while(count != ENEMIES_LIMIT){
 		if(x == 0) enemies[count]->setXspeed(100);
 		else if(x == 100) enemies[count]->setXspeed(-100);
 		enemies[count]->setAnimRate(30);
 		count++;
 	}
     count = 0;
-    while(count != 7){
+    while(count != ENEMIES_LIMIT){
     	enemies[count]->update(game->getUpdateInterval());
     	count++;
     }
@@ -128,16 +129,13 @@ void PlayState::draw(CGame* game)
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
 
-    //player->setRotation(0);
-    //player->setScale(1);
-    //player->draw();
-
     // Agora o mapa e' responsavel por desenhar o jogador, imediatamente depois
     // da camada 0 (primeira camada do mapa)
     count = 0;
+    player->setScale(0.75);
     background->draw();
     player->draw();
-    while(count != 7){
+    while(count != ENEMIES_LIMIT){
     	enemies[count]->draw();
     	count++;
     }

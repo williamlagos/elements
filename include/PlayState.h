@@ -16,6 +16,8 @@
 #include "CSprite.h"
 #include "maploader/TMXLoader.h"
 
+#define ENEMIES_LIMIT 13
+
 class PlayState : public CGameState
 {
     public:
@@ -48,7 +50,7 @@ class PlayState : public CGameState
     float dirx, diry; // movement direction
 
     CImage* background;
-    CSprite* enemies[10];
+    CSprite* enemies[12];
     CSprite* player;  // player image
     Uint8* keyState;  // array to store keyboard state
 };
