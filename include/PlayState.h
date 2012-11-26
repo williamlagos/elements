@@ -49,10 +49,11 @@ class PlayState : public CGameState
     int count,vertical;
     float dirx, diry; // movement direction
 
-    CImage* background;
-    CSprite* enemies[12];
-    CSprite* player;  // player image
-    Uint8* keyState;  // array to store keyboard state
+    CImage *background;
+    CSprite *enemies[12];
+    CSprite *player;  // player image
+	CSprite *bullet;
+    Uint8 *keyState;  // array to store keyboard state
 };
 
 #endif

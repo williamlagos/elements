@@ -40,8 +40,11 @@ void PlayState::init()
     player->loadSpriteSparrowXML("data/img/spaceship.xml");
     player->setPosition(172,550);
     player->setAnimRate(0);
+    player->setScale(0.5);
     dirx = 0; // direção do personagem: para a direita (5), esquerda (-5)
     diry = 0; // direção do personagem: para cima (5), baixo (-5)
+
+    bullet = NULL;
 
     keyState = SDL_GetKeyState(0); // get key state array
     cout << "PlayState Init Successful" << endl;
@@ -66,18 +69,26 @@ void PlayState::resume()
 void PlayState::handleEvents(CGame* game)
 {
 	SDL_Event event;
-
+	int x,y;
 	while (SDL_PollEvent(&event)) {
 		switch (event.type) {
 			case SDL_QUIT:
 				game->quit();
 				break;
-
             case SDL_KEYDOWN:
 				switch(event.key.keysym.sym){
                     case SDLK_ESCAPE:
                         game->quit();
                         break;
+                    case SDLK_SPACE:
+                    	bullet = new CSprite();
+                    	bullet->loadSpriteSparrowXML("data/img/bullet.xml");
+                    	x = player->getX();
+                    	y = player->getY();
+                    	bullet->setPosition(x,y);
+                    	bullet->setYspeed(-100.0);
+                    	cout << "Fire!" << endl;
+                    	break;
                     default:
                         break;
                 }
@@ -108,11 +119,16 @@ void PlayState::handleEvents(CGame* game)
 void PlayState::update(CGame* game)
 {
     int x = (int) enemies[0]->getX();
+    int bottom;
 	count = 0;
 	while(count != ENEMIES_LIMIT){
 		if(x == 0) enemies[count]->setXspeed(100);
 		else if(x == 100) enemies[count]->setXspeed(-100);
 		enemies[count]->setAnimRate(30);
+		if(bullet != NULL){
+			bottom = enemies[count]->getY();
+			if(bottom < -bullet->getY()) cout << "Collision! - bottom: " << bottom << " - bullet: " << bullet->getY() << endl;//delete enemies[count];
+		}
 		count++;
 	}
     count = 0;
@@ -121,6 +137,8 @@ void PlayState::update(CGame* game)
     	count++;
     }
     player->update(game->getUpdateInterval());
+    if(bullet != NULL) bullet->update(game->getUpdateInterval());
+
 }
 
 void PlayState::draw(CGame* game)
@@ -132,9 +150,9 @@ void PlayState::draw(CGame* game)
     // Agora o mapa e' responsavel por desenhar o jogador, imediatamente depois
     // da camada 0 (primeira camada do mapa)
     count = 0;
-    player->setScale(0.75);
     background->draw();
     player->draw();
+    if(bullet != NULL) bullet->draw();
     while(count != ENEMIES_LIMIT){
     	enemies[count]->draw();
     	count++;
