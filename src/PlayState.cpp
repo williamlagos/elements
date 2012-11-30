@@ -86,7 +86,7 @@ void PlayState::handleEvents(CGame* game)
                     	x = player->getX();
                     	y = player->getY();
                     	bullet->setPosition(x,y);
-                    	bullet->setYspeed(-100.0);
+                    	bullet->setYspeed(-150.0);
                     	cout << "Fire!" << endl;
                     	break;
                     default:
@@ -122,18 +122,23 @@ void PlayState::update(CGame* game)
     int bottom;
 	count = 0;
 	while(count != ENEMIES_LIMIT){
-		if(x == 0) enemies[count]->setXspeed(100);
-		else if(x == 100) enemies[count]->setXspeed(-100);
-		enemies[count]->setAnimRate(30);
-		if(bullet != NULL){
-			bottom = enemies[count]->getY();
-			if(bottom < -bullet->getY()) cout << "Collision! - bottom: " << bottom << " - bullet: " << bullet->getY() << endl;//delete enemies[count];
+		if(enemies[count] != NULL){
+			if(x == 0) enemies[count]->setXspeed(100);
+			else if(x == 100) enemies[count]->setXspeed(-100);
+			enemies[count]->setAnimRate(30);
+			if(bullet != NULL)
+				if(enemies[count]->bboxCollision(bullet)){
+					cout << "Hit!" << endl;
+					delete enemies[count];
+				}
 		}
 		count++;
 	}
     count = 0;
     while(count != ENEMIES_LIMIT){
-    	enemies[count]->update(game->getUpdateInterval());
+    	if(enemies[count] != NULL){
+    		enemies[count]->update(game->getUpdateInterval());
+    	}
     	count++;
     }
     player->update(game->getUpdateInterval());
@@ -154,7 +159,9 @@ void PlayState::draw(CGame* game)
     player->draw();
     if(bullet != NULL) bullet->draw();
     while(count != ENEMIES_LIMIT){
-    	enemies[count]->draw();
+    	if(enemies[count] != NULL){
+    		enemies[count]->draw();
+    	}
     	count++;
     }
 
