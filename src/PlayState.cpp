@@ -16,8 +16,6 @@
 
 PlayState PlayState::m_PlayState;
 
-using namespace std;
-
 #define SPEED 150
 
 void PlayState::init()
@@ -118,29 +116,25 @@ void PlayState::handleEvents(CGame* game)
 
 void PlayState::update(CGame* game)
 {
-    int x = (int) enemies[0]->getX();
-    int bottom;
+	int bottom,x;
+	x = (int) enemies[0]->getX();
 	count = 0;
 	while(count != ENEMIES_LIMIT){
-		if(enemies[count] != NULL){
+		if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
 			if(x == 0) enemies[count]->setXspeed(100);
 			else if(x == 100) enemies[count]->setXspeed(-100);
 			enemies[count]->setAnimRate(30);
-			if(bullet != NULL)
+			enemies[count]->update(game->getUpdateInterval());
+			if(bullet != NULL){
 				if(enemies[count]->bboxCollision(bullet)){
 					cout << "Hit!" << endl;
-					delete enemies[count];
+					destroyed.push_back(count);
+					//enemies[count] = new CSprite();
 				}
+			}
 		}
 		count++;
 	}
-    count = 0;
-    while(count != ENEMIES_LIMIT){
-    	if(enemies[count] != NULL){
-    		enemies[count]->update(game->getUpdateInterval());
-    	}
-    	count++;
-    }
     player->update(game->getUpdateInterval());
     if(bullet != NULL) bullet->update(game->getUpdateInterval());
 
@@ -159,7 +153,7 @@ void PlayState::draw(CGame* game)
     player->draw();
     if(bullet != NULL) bullet->draw();
     while(count != ENEMIES_LIMIT){
-    	if(enemies[count] != NULL){
+    	if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
     		enemies[count]->draw();
     	}
     	count++;

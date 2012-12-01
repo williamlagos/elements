@@ -12,11 +12,14 @@
 
 #include <SDL.h>
 #include <vector>
+#include <algorithm>
 #include "CGameState.h"
 #include "CSprite.h"
 #include "maploader/TMXLoader.h"
 
 #define ENEMIES_LIMIT 13
+
+using namespace std;
 
 class PlayState : public CGameState
 {
@@ -49,6 +52,7 @@ class PlayState : public CGameState
     int count,vertical;
     float dirx, diry; // movement direction
 
+    vector<int> destroyed;
     CImage *background;
     CSprite *enemies[12];
     CSprite *player;  // player image
