@@ -14,6 +14,8 @@
 #include "CGame.h"
 #include "MenuState.h"
 
+#undef main
+
 int main(int argc, char **argv)
 {
     CGame game(5,30);
