@@ -13,6 +13,7 @@
 #include <cmath>
 #include "CGame.h"
 #include "PlayState.h"
+#include "PauseState.h"
 
 PlayState PlayState::m_PlayState;
 
@@ -21,7 +22,7 @@ PlayState PlayState::m_PlayState;
 void PlayState::init()
 {
 	vertical = 1;
-	count = 0;
+	next = count = 0;
 	background = new CImage();
     background->loadImage("data/maps/black.png");
 	while(count != ENEMIES_LIMIT){
@@ -85,7 +86,9 @@ void PlayState::handleEvents(CGame* game)
                     	y = player->getY();
                     	bullet->setPosition(x,y);
                     	bullet->setYspeed(-150.0);
-                    	cout << "Fire!" << endl;
+                    	break;
+                    case SDLK_p:
+                    	game->pushState(PauseState::instance());
                     	break;
                     default:
                         break;
@@ -99,7 +102,6 @@ void PlayState::handleEvents(CGame* game)
     }
 
     player->setXspeed(dirx);
-    //player->setYspeed(diry);
 
     if(dirx || diry)
         player->setAnimRate(30);
@@ -107,37 +109,42 @@ void PlayState::handleEvents(CGame* game)
         player->setAnimRate(0);
         player->setCurrentFrame(3);
     }
-
-    if(dirx > 0)
-        player->setMirror(false);
-    else if(dirx < 0)
-        player->setMirror(true);
 }
 
 void PlayState::update(CGame* game)
 {
-	int bottom,x;
+	int bottom,last,x,y;
 	x = (int) enemies[0]->getX();
+	y = (int) enemies[ENEMIES_LIMIT-2]->getY();
 	count = 0;
-	while(count != ENEMIES_LIMIT){
+	while(count != ENEMIES_LIMIT-1){
 		if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
 			if(x == 0) enemies[count]->setXspeed(100);
-			else if(x == 100) enemies[count]->setXspeed(-100);
-			enemies[count]->setAnimRate(30);
-			enemies[count]->update(game->getUpdateInterval());
-			if(bullet != NULL){
-				if(enemies[count]->bboxCollision(bullet)){
-					cout << "Hit!" << endl;
-					destroyed.push_back(count);
-					//enemies[count] = new CSprite();
+			else if(x == 100){
+				enemies[count]->setXspeed(-100);
+				enemies[next]->setYspeed(100);
+			}else if(y > 300){
+				if(x < 25){
+					enemies[next]->setYspeed(-100);
+					enemies[next]->setXspeed(0);
+				}else{
+					enemies[next]->setYspeed(0);
+					enemies[next]->setXspeed(-100);
 				}
 			}
+			enemies[count]->setAnimRate(30);
+			enemies[count]->update(game->getUpdateInterval());
+			if(bullet != NULL)
+				if(enemies[count]->bboxCollision(bullet)){
+					destroyed.push_back(count);
+					bullet = NULL;
+				}
 		}
 		count++;
 	}
-    player->update(game->getUpdateInterval());
     if(bullet != NULL) bullet->update(game->getUpdateInterval());
-
+    player->update(game->getUpdateInterval());
+    next++; next %= ENEMIES_LIMIT;
 }
 
 void PlayState::draw(CGame* game)
@@ -150,14 +157,13 @@ void PlayState::draw(CGame* game)
     // da camada 0 (primeira camada do mapa)
     count = 0;
     background->draw();
-    player->draw();
     if(bullet != NULL) bullet->draw();
-    while(count != ENEMIES_LIMIT){
+    while(count != ENEMIES_LIMIT-1){
     	if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
     		enemies[count]->draw();
     	}
     	count++;
     }
-
+    player->draw();
     SDL_GL_SwapBuffers();
 }

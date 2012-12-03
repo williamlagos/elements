@@ -49,7 +49,7 @@ class PlayState : public CGameState
 
     static PlayState m_PlayState; // singleton
 
-    int count,vertical;
+    int count,next,vertical;
     float dirx, diry; // movement direction
 
     vector<int> destroyed;

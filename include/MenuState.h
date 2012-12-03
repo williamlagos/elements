@@ -43,9 +43,8 @@ class MenuState : public CGameState
 
     static MenuState m_MenuState;
 
-    CImage* menuImage;
-    CSprite* newGame;
-    CSprite* exitGame;
+    CImage *menuImage,*pressStart,*pressExit;
+    CSprite *newGame,*exitGame;
 };
 
 #endif

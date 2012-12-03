@@ -22,10 +22,14 @@ using namespace std;
 void MenuState::init()
 {
     menuImage = new CImage();
-    menuImage->loadImage("data/img/menu.png"); // load menu state bitmap
+    pressStart = new CImage();
+    pressExit = new CImage();
     newGame = new CSprite();
-    newGame->loadSpriteSparrowXML("data/img/newgame.xml");
     exitGame = new CSprite();
+    menuImage->loadImage("data/img/menu.png");
+    pressStart->loadImage("data/img/press_start.png");
+    pressExit->loadImage("data/img/press_exit.png");
+    newGame->loadSpriteSparrowXML("data/img/newgame.xml");
     exitGame->loadSpriteSparrowXML("data/img/exitgame.xml");
 	cout << "MenuState Init Successful" << endl;
 }
@@ -78,13 +82,16 @@ void MenuState::update(CGame* game)
 
 void MenuState::draw(CGame* game)
 {
-    glClearColor(0.6,0.6,0.6,1); // gray
+    glClearColor(1,1,1,1); // gray
     glClear(GL_COLOR_BUFFER_BIT);
     menuImage->draw();
-    newGame->setPosition(40,450);
+    newGame->setPosition(40,150);
+    pressStart->setPosition(20,250);
+    exitGame->setPosition(40,450);
+    pressExit->setPosition(75,550);
     newGame->draw();
-    exitGame->setPosition(40,550);
+    pressStart->draw();
     exitGame->draw();
+    pressExit->draw();
     SDL_GL_SwapBuffers();
 }
-
