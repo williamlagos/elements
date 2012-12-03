@@ -21,6 +21,8 @@ PlayState PlayState::m_PlayState;
 
 void PlayState::init()
 {
+	bug_speed = 100;
+	won = defeated = false;
 	vertical = 1;
 	next = count = 0;
 	background = new CImage();
@@ -32,6 +34,7 @@ void PlayState::init()
 		enemy->setPosition((count%6)*60,30*vertical);
 		enemy->setAnimRate(0);
 		enemy->setScale(0.5);
+		enemy->setXspeed(bug_speed);
 		enemies[count] = enemy;
 		count++;
 	}
@@ -74,75 +77,93 @@ void PlayState::handleEvents(CGame* game)
 			case SDL_QUIT:
 				game->quit();
 				break;
-            case SDL_KEYDOWN:
+			case SDL_KEYDOWN:
 				switch(event.key.keysym.sym){
-                    case SDLK_ESCAPE:
-                        game->quit();
-                        break;
-                    case SDLK_SPACE:
-                    	bullet = new CSprite();
-                    	bullet->loadSpriteSparrowXML("data/img/bullet.xml");
-                    	x = player->getX();
-                    	y = player->getY();
-                    	bullet->setPosition(x,y);
-                    	bullet->setYspeed(-150.0);
-                    	break;
-                    case SDLK_p:
-                    	game->pushState(PauseState::instance());
-                    	break;
-                    default:
-                        break;
-                }
-                break;
-            case SDL_VIDEORESIZE:
-                game->resize(event.resize.w, event.resize.h);
-        }
-        dirx = keyState[SDLK_RIGHT]*SPEED + keyState[SDLK_LEFT]*-SPEED;
-        diry = keyState[SDLK_DOWN] *SPEED + keyState[SDLK_UP]  *-SPEED;
-    }
+					case SDLK_ESCAPE:
+						game->quit();
+						break;
+					case SDLK_SPACE:
+						if(!defeated){
+							bullet = new CSprite();
+							bullet->loadSpriteSparrowXML("data/img/bullet.xml");
+							x = player->getX();
+							y = player->getY();
+							bullet->setPosition(x+(player->getWidth()/2),y);
+							bullet->setYspeed(-150.0);
+						}
+						break;
+					case SDLK_p:
+						if(!defeated){
+							game->pushState(PauseState::instance());
+						}
+						break;
+					case SDLK_n:
+						if(won){
+							count = 0; bug_speed *= 1.5;
+							won = defeated = false;
+						    background->loadImage("data/maps/black.png");
+							destroyed.clear();
+						}
+						break;
+					default:
+						break;
+				}
+				break;
+			case SDL_VIDEORESIZE:
+				game->resize(event.resize.w, event.resize.h);
+		}
+		if(!defeated){
+			dirx = keyState[SDLK_RIGHT]*SPEED + keyState[SDLK_LEFT]*-SPEED;
+			diry = keyState[SDLK_DOWN] *SPEED + keyState[SDLK_UP]  *-SPEED;
+		}
+	}
 
-    player->setXspeed(dirx);
+	player->setXspeed(dirx);
 
-    if(dirx || diry)
-        player->setAnimRate(30);
-    else {
-        player->setAnimRate(0);
-        player->setCurrentFrame(3);
-    }
+	if(dirx || diry)
+		player->setAnimRate(30);
+	else {
+		player->setAnimRate(0);
+		player->setCurrentFrame(3);
+	}
 }
 
 void PlayState::update(CGame* game)
 {
-	int bottom,last,x,y;
-	x = (int) enemies[0]->getX();
-	y = (int) enemies[ENEMIES_LIMIT-2]->getY();
+	CSprite *enem,*nexe;
+	int left,right,bottom,top;
 	count = 0;
 	while(count != ENEMIES_LIMIT-1){
 		if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
-			if(x == 0) enemies[count]->setXspeed(100);
-			else if(x == 100){
-				enemies[count]->setXspeed(-100);
-				enemies[next]->setYspeed(100);
-			}else if(y > 300){
-				if(x < 25){
-					enemies[next]->setYspeed(-100);
-					enemies[next]->setXspeed(0);
-				}else{
-					enemies[next]->setYspeed(0);
-					enemies[next]->setXspeed(-100);
-				}
-			}
+			enem = enemies[count];
+			nexe = enemies[next];
+			top = nexe->getY(); left = enem->getX();
+			bottom = nexe->getY()+nexe->getHeight();
+			right = enem->getX()+enem->getWidth();
+			if(left <= 0) enemies[count]->setXspeed(bug_speed);
+			else if(top <= 30) enemies[next]->setYspeed(bug_speed/2);
+			else if(right >= 480) enemies[count]->setXspeed(-bug_speed);
+			else if(bottom >= 720) enemies[next]->setYspeed(-bug_speed/2);
 			enemies[count]->setAnimRate(30);
 			enemies[count]->update(game->getUpdateInterval());
 			if(bullet != NULL)
 				if(enemies[count]->bboxCollision(bullet)){
+					if(count == 0) enemies[count]->setX(0);
 					destroyed.push_back(count);
 					bullet = NULL;
 				}
+			if(enemies[count]->bboxCollision(player)){
+				background->loadImage("data/img/game_over.png");
+				defeated = true;
+			}else if(destroyed.size() == 12){
+				background->loadImage("data/img/game_win.png");
+				won = true;
+			}
 		}
 		count++;
 	}
     if(bullet != NULL) bullet->update(game->getUpdateInterval());
+    player->setY(550);
     player->update(game->getUpdateInterval());
     next++; next %= ENEMIES_LIMIT;
 }

@@ -49,9 +49,10 @@ class PlayState : public CGameState
 
     static PlayState m_PlayState; // singleton
 
-    int count,next,vertical;
+    int count,next,vertical,bug_speed;
     float dirx, diry; // movement direction
 
+    bool won,defeated;
     vector<int> destroyed;
     CImage *background;
     CSprite *enemies[12];
