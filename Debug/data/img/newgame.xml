@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="newgame.png">
+    <!-- Created with TexturePacker -->
+    <!-- http://texturepacker.com -->
+    <!--  -->
+    <SubTexture name="NewGame" x="0" y="0" height="77" width="400"/>
+    <SubTexture name="NewGameOff" x="0" y="77" height="77" width="400"/>
+</TextureAtlas>
