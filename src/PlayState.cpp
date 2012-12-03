@@ -11,7 +11,9 @@
 #include <SDL.h>
 #include "Graphics.h"
 #include <cmath>
+#ifndef WIN32
 #include <unistd.h>
+#endif WIN32
 #include "CGame.h"
 #include "PlayState.h"
 #include "PauseState.h"
@@ -138,7 +140,11 @@ void PlayState::update(CGame* game)
 	count = 0;
 	if(won){
 		snd->PlaySound("data/snd/won.wav");
+#ifdef WIN32
+		Sleep(5000);
+#else
 		usleep(5000000);
+#endif WIN32
 	}
 	while(count != ENEMIES_LIMIT-1){
 		if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
@@ -163,7 +169,7 @@ void PlayState::update(CGame* game)
 			if(enemies[count]->bboxCollision(player)){
 				background->loadImage("data/img/game_over.png");
 				defeated = true;
-			}else if(destroyed.size() == 2){
+			}else if(destroyed.size() == 12){
 				background->loadImage("data/img/game_win.png");
 				won = true;
 			}
