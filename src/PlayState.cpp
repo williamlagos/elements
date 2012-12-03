@@ -11,6 +11,7 @@
 #include <SDL.h>
 #include "Graphics.h"
 #include <cmath>
+#include <unistd.h>
 #include "CGame.h"
 #include "PlayState.h"
 #include "PauseState.h"
@@ -21,6 +22,7 @@ PlayState PlayState::m_PlayState;
 
 void PlayState::init()
 {
+	snd = new CSound();
 	bug_speed = 100;
 	won = defeated = false;
 	vertical = 1;
@@ -85,6 +87,7 @@ void PlayState::handleEvents(CGame* game)
 					case SDLK_SPACE:
 						if(!defeated){
 							bullet = new CSprite();
+							snd->PlaySound("data/snd/shot.wav");
 							bullet->loadSpriteSparrowXML("data/img/bullet.xml");
 							x = player->getX();
 							y = player->getY();
@@ -133,6 +136,10 @@ void PlayState::update(CGame* game)
 	CSprite *enem,*nexe;
 	int left,right,bottom,top;
 	count = 0;
+	if(won){
+		snd->PlaySound("data/snd/won.wav");
+		usleep(5000000);
+	}
 	while(count != ENEMIES_LIMIT-1){
 		if(find(destroyed.begin(),destroyed.end(),count) == destroyed.end()){
 			enem = enemies[count];
@@ -148,6 +155,7 @@ void PlayState::update(CGame* game)
 			enemies[count]->update(game->getUpdateInterval());
 			if(bullet != NULL)
 				if(enemies[count]->bboxCollision(bullet)){
+					snd->PlaySound("data/snd/destroy.wav");
 					if(count == 0) enemies[count]->setX(0);
 					destroyed.push_back(count);
 					bullet = NULL;
@@ -155,7 +163,7 @@ void PlayState::update(CGame* game)
 			if(enemies[count]->bboxCollision(player)){
 				background->loadImage("data/img/game_over.png");
 				defeated = true;
-			}else if(destroyed.size() == 12){
+			}else if(destroyed.size() == 2){
 				background->loadImage("data/img/game_win.png");
 				won = true;
 			}

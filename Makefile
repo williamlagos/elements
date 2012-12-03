@@ -207,6 +207,30 @@ src/CMultiImage.cpp.s:
 	$(MAKE) -f CMakeFiles/invaders.dir/build.make CMakeFiles/invaders.dir/src/CMultiImage.cpp.s
 .PHONY : src/CMultiImage.cpp.s
 
+src/CSound.o: src/CSound.cpp.o
+.PHONY : src/CSound.o
+
+# target to build an object file
+src/CSound.cpp.o:
+	$(MAKE) -f CMakeFiles/invaders.dir/build.make CMakeFiles/invaders.dir/src/CSound.cpp.o
+.PHONY : src/CSound.cpp.o
+
+src/CSound.i: src/CSound.cpp.i
+.PHONY : src/CSound.i
+
+# target to preprocess a source file
+src/CSound.cpp.i:
+	$(MAKE) -f CMakeFiles/invaders.dir/build.make CMakeFiles/invaders.dir/src/CSound.cpp.i
+.PHONY : src/CSound.cpp.i
+
+src/CSound.s: src/CSound.cpp.s
+.PHONY : src/CSound.s
+
+# target to generate assembly for a file
+src/CSound.cpp.s:
+	$(MAKE) -f CMakeFiles/invaders.dir/build.make CMakeFiles/invaders.dir/src/CSound.cpp.s
+.PHONY : src/CSound.cpp.s
+
 src/CSprite.o: src/CSprite.cpp.o
 .PHONY : src/CSprite.o
 
@@ -516,6 +540,9 @@ help:
 	@echo "... src/CMultiImage.o"
 	@echo "... src/CMultiImage.i"
 	@echo "... src/CMultiImage.s"
+	@echo "... src/CSound.o"
+	@echo "... src/CSound.i"
+	@echo "... src/CSound.s"
 	@echo "... src/CSprite.o"
 	@echo "... src/CSprite.i"
 	@echo "... src/CSprite.s"

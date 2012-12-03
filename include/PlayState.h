@@ -15,6 +15,7 @@
 #include <algorithm>
 #include "CGameState.h"
 #include "CSprite.h"
+#include "CSound.h"
 #include "maploader/TMXLoader.h"
 
 #define ENEMIES_LIMIT 13
@@ -54,6 +55,7 @@ class PlayState : public CGameState
 
     bool won,defeated;
     vector<int> destroyed;
+    CSound *snd;
     CImage *background;
     CSprite *enemies[12];
     CSprite *player;  // player image
