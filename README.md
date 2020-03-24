@@ -1,4 +1,4 @@
-invaders
+elements
 ========
 
-Space Invaders Game
+Elements simple game engine

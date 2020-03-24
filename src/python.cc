@@ -1,23 +1,23 @@
 /*
- * This file is part of Zhockon Platform project.
+ * This file is part of elements project.
  * 
- * Copyright (C) 2009-2011 William Oliveira de Lagos <williamx64@gmail.com>
+ * Copyright (C) 2009-2011 William Oliveira de Lagos <william.lagos@icloud.com>
  *
- * Zhockon is free software: you can redistribute it and/or modify
+ * Elements is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Zhockon is distributed in the hope that it will be useful,
+ * Elements is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Zhockon.  If not, see <http://www.gnu.org/licenses/>.
+ * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "zkn.h"
+#include "elements.h"
 #include "euphoria.h"
 
 PyGame::PyGame()
@@ -53,14 +53,14 @@ int Naanphea::stopEngine()
 	game.stopEngine();
 }
 
-ZKN::ZKN(bool naanStatus=false,bool euphStatus=false)
+elements::elements(bool naanStatus=false,bool euphStatus=false)
 {
 	naanCore = new Naanphea(naanStatus);
 	euphCore = new Euphoria(euphStatus);
 	gameClasses.insert(pair<void*,bool>((void*)naanCore,naanCore->getStatus()));
 	gameClasses.insert(pair<void*,bool>((void*)euphCore,euphCore->getStatus()));
 }
-int ZKN::chooseGameClass(int gameType)
+int elements::chooseGameClass(int gameType)
 {
 	switch(gameType){
 	  case 2: gameClasses[(void*)euphCore] = true;
@@ -71,15 +71,15 @@ int ZKN::chooseGameClass(int gameType)
 		  break;
 	}
 }
-int ZKN::callZKNModule()
+int elements::callelementsModule()
 {
 	/* Option not implemented already */
 }
-void* ZKN::getEngineHandler()
+void* elements::getEngineHandler()
 {
 	return engineHandler;
 }
-void* ZKN::getMicroModule()
+void* elements::getMicroModule()
 {
 
 }
