@@ -7,4 +7,4 @@ ENDIF(UNIX)
 
 INCLUDE_DIRECTORIES(include)
 
-ADD_EXECUTABLE(invaders.out src/main.cc)
+ADD_EXECUTABLE(elements.out src/main.cc)

@@ -1,4 +1,4 @@
 elements
 ========
 
-Elements simple game engine
+Elements game engine with platform-agnostic primitives

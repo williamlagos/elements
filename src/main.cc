@@ -18,9 +18,22 @@
  */
 
 #define _APP_MAIN_CPP_
-
+#include <elements.h>
 /* #include "aeroshell.h"
 #include <QApplication> */
+
+using namespace std;
+
+int python(int argc,char* argv[])
+{
+	/*createGame("Hello World");
+	SDL *sdlHandler = new SDL("HW",0,0);
+	sdlHandler->baseMove();
+	Python p("Test");
+	p.helloPython();*/
+	return 0;
+}
+
 
 int main(int argc, char *argv[])
 {
