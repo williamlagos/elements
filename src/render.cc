@@ -18,7 +18,13 @@
  */
 
 #include <elements.h>
-using namespace elements;
+#include <vector>
+
+/*class Surface {
+public:
+    Surface(int);
+    void whichPoints(std::vector<int>);
+};
 
 Surface::Surface(int)
 {
@@ -30,6 +36,14 @@ void Surface::whichPoints(std::vector<int>)
   
 }
 
+class Geometry {
+public:
+    void createParent(Group*);
+    void createColorBind();
+    void whichVertexMatrix(Matrix<int>*);
+    void whichColorsMatrix(Matrix<float>*);
+    void createPrimitiveSet(Surface*);
+};
 
 void Geometry::createParent(Group*)
 {
@@ -39,11 +53,11 @@ void Geometry::createColorBind()
 {
   
 }
-void Geometry::whichVertexMatrix(Matrix<int>*)
+void Geometry::whichVertexMatrix(Matrix<int>* mat)
 {
   
 }
-void Geometry::whichColorsMatrix(Matrix<float>*)
+void Geometry::whichColorsMatrix(Matrix<float>* mat)
 {
   
 }
@@ -52,16 +66,35 @@ void Geometry::createPrimitiveSet(Surface*)
   
 }
 
+class Group {
+public:
+    addChild(Geometry*);
+};
 
 void Group::addChild(Geometry*)
 {
   
 }
 
+class Scene {
+private:
+    Group* root;
+public:
+    Scene();
+    void createPyramid();
+    void createCube();
+    void defineVertices();
+    void whichPrimitives(int, vector<int>, Geometry*);
+    void linkSceneObject(Geometry*);
+    void createObject();
+    void defineColors(Geometry*);
+    void transformMode(Geometry*);
+    void drawScene();
+}
 
 Scene::Scene()
 {
-        root = new Group();
+    root = new Group();
 }
 
 void Scene::createPyramid()
@@ -72,12 +105,12 @@ void Scene::createPyramid()
 	vector<int> basePyramid(Base,Base+sizeof(Base)/sizeof(int));
 	whichPrimitives(GL_QUADS,basePyramid,objGeo);
 	
-	/*int pBase[4] = {3,2,1,0}; definePrimitives(GL_QUADS,(int*)pBase,objGeo);
+	int pBase[4] = {3,2,1,0}; definePrimitives(GL_QUADS,(int*)pBase,objGeo);
 	
 	int pFaceOne[3] = {0,1,4}; definePrimitives(GL_TRIANGLES,(int*)pFaceOne,objGeo);
 	int pFaceTwo[3] = {1,2,4}; definePrimitives(GL_TRIANGLES,(int*)pFaceTwo,objGeo);
 	int pFaceThr[3] = {2,3,4}; definePrimitives(GL_TRIANGLES,(int*)pFaceThr,objGeo);
-	int pFaceFou[3] = {3,0,4}; definePrimitives(GL_TRIANGLES,(int*)pFaceFou,objGeo);*/
+	int pFaceFou[3] = {3,0,4}; definePrimitives(GL_TRIANGLES,(int*)pFaceFou,objGeo);
 	
 	defineColors(objGeo);
 }
@@ -85,14 +118,14 @@ void Scene::createCube()
 {
 	Geometry* objGeo = (Geometry*)createObject();
 	
-	/*int pBaseDown[4] = {3,2,1,0}; whichPrimitives(GL_QUADS,(int*)pBaseDown,objGeo);
+	int pBaseDown[4] = {3,2,1,0}; whichPrimitives(GL_QUADS,(int*)pBaseDown,objGeo);
 	
 	int pFaceOne[4] = {1,0,3,4}; whichPrimitives(GL_QUADS,(int*)pFaceOne,objGeo);
 	int pFaceTwo[4] = {1,1,2,4}; whichPrimitives(GL_QUADS,(int*)pFaceTwo,objGeo);
 	int pFaceThr[4] = {1,2,1,4}; whichPrimitives(GL_QUADS,(int*)pFaceThr,objGeo);
 	int pFaceFou[4] = {1,3,0,4}; whichPrimitives(GL_QUADS,(int*)pFaceFou,objGeo);
 	
-	int pBaseUp[4] = {2,1,2,3}; whichPrimitives(GL_QUADS,(int*)pBaseUp,objGeo);*/
+	int pBaseUp[4] = {2,1,2,3}; whichPrimitives(GL_QUADS,(int*)pBaseUp,objGeo);
 	
 	defineColors(objGeo);
 }
@@ -148,8 +181,8 @@ void* Scene::defineColors(Geometry* objectGeo)
 }
 void Scene::transformMode(Geometry* objectGeo)
 {
-        /*PositionAttitudeTransform* objectTwoXForm =
-        new PositionAttitudeTransform();*/
+        PositionAttitudeTransform* objectTwoXForm =
+        new PositionAttitudeTransform();
         root->addChild(objectGeo);
         objectGeo->createParent(root);
 
@@ -161,6 +194,6 @@ void Scene::transformMode(Geometry* objectGeo)
 void Scene::drawScene()
 {
         Player player;
-	/*viewer.setSceneData( root );
-	viewer.run();*/
-}
+	viewer.setSceneData( root );
+	viewer.run();
+}*/

@@ -18,7 +18,11 @@
  */
 
 #include <elements.h>
-using namespace elements;
+
+class Player {
+public:
+    Player();
+};
 
 Player::Player()
 {

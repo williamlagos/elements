@@ -17,9 +17,9 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <Box2D/Box2D.h>
+//#include <Box2D/Box2D.h>
 
-extern b2Body *groundBody,*body;
+/*extern b2Body *groundBody,*body;
 
 extern b2Vec2 gravity;
 extern b2World world;
@@ -31,3 +31,4 @@ extern float32 timeStep;
 extern int32 velocityIterations,positionIterations;
 
 void initBOX2D(b2World *wrd);
+*/

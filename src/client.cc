@@ -18,49 +18,100 @@
  */
 
 #include "elements.h"
-#include "euphoria.h"
+#include <map>
+//#include "euphoria.h"
 
-PyGame::PyGame()
-{
-	/* Option not implemented already */
+class Module {
+private:
+    bool status;
+public:
+    Module(bool);
+    bool getStatus();
+};
+
+Module::Module(bool stat) {
+    status = stat;
 }
 
-Euphoria::Euphoria(bool stat) : Module(name,status)
+bool Module::getStatus()
 {
-	name = "Euphoria";
+    return status;
+}
+
+class Euphoria : public Module {
+private:
+    std::string name;
+    bool status;
+public:
+    Euphoria(bool);
+    int startEngine();
+    int stopEngine();
+};
+
+class Naanphea : public Module {
+private:
+    std::string name;
+    bool status;
+public:
+    Naanphea(bool);
+    int startEngine();
+    int stopEngine();
+};
+
+Euphoria::Euphoria(bool stat) : Module(stat)
+{
+    name = "Naanphea";
 	status = stat;
 }
 int Euphoria::startEngine()
 {
 	/* Option not implemented already */
+    return 0;
 }
 int Euphoria::stopEngine()
 {
 	/* Option not implemented already */
+    return 0;
 }
 
-Naanphea::Naanphea(bool stat) : Module(name,status)
+Naanphea::Naanphea(bool stat) : Module(stat)
 {
 	name = "Naanphea";
 	status = stat;
 }
 int Naanphea::startEngine()
 {
-	game.startEngine();
+	/* Option not implemented already */
+    return 0;
 }
 int Naanphea::stopEngine()
 {
-	game.stopEngine();
+	/* Option not implemented already */
+    return 0;
 }
 
-elements::elements(bool naanStatus=false,bool euphStatus=false)
+class Elements {
+private:
+    Naanphea* naanCore;
+    Euphoria* euphCore;
+    void* engineHandler;
+    std::map<void*, bool> gameClasses;
+public:
+    Elements(bool, bool);
+    int chooseGameClass(int);
+    int callelementsModule();
+    void* getEngineHandler();
+    void* getMicroModule();
+};
+
+Elements::Elements(bool naanStatus, bool euphStatus)
 {
 	naanCore = new Naanphea(naanStatus);
 	euphCore = new Euphoria(euphStatus);
-	gameClasses.insert(pair<void*,bool>((void*)naanCore,naanCore->getStatus()));
-	gameClasses.insert(pair<void*,bool>((void*)euphCore,euphCore->getStatus()));
+	gameClasses.insert(std::pair<void*,bool>((void*)naanCore,naanCore->getStatus()));
+	gameClasses.insert(std::pair<void*,bool>((void*)euphCore,euphCore->getStatus()));
 }
-int elements::chooseGameClass(int gameType)
+int Elements::chooseGameClass(int gameType)
 {
 	switch(gameType){
 	  case 2: gameClasses[(void*)euphCore] = true;
@@ -70,16 +121,18 @@ int elements::chooseGameClass(int gameType)
 		  engineHandler = (void*)naanCore;
 		  break;
 	}
+    return 0;
 }
-int elements::callelementsModule()
+int Elements::callelementsModule()
 {
 	/* Option not implemented already */
+    return 0;
 }
-void* elements::getEngineHandler()
+void* Elements::getEngineHandler()
 {
 	return engineHandler;
 }
-void* elements::getMicroModule()
+void* Elements::getMicroModule()
 {
-
+    return NULL;
 }

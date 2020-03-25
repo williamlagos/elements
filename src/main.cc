@@ -18,10 +18,10 @@
  */
 
 #define _APP_MAIN_CPP_
+#include <iostream>
 #include <elements.h>
 /* #include "aeroshell.h"
 #include <QApplication> */
-
 using namespace std;
 
 int python(int argc,char* argv[])
@@ -34,20 +34,18 @@ int python(int argc,char* argv[])
 	return 0;
 }
 
-
 int main(int argc, char *argv[])
 {
     /* Toolbox_malloc  = (void *(__cdecl *)(size_t))malloc;
     Toolbox_calloc  = (void *(__cdecl *)(size_t,size_t))calloc;
     Toolbox_realloc = (void *(__cdecl *)(void*,size_t))realloc;
     Toolbox_free    = (void (__cdecl *)(void *))free;
-
     QApplication a(argc, argv);
     AERoshell *poAERoshell = new AERoshell(&a);
     int nReturnCode = a.exec();
     delete poAERoshell; */
-
+    int var = 20;
     cout << "Hello World!" << endl;
-
+    while(false) { }
     return 0;
 }

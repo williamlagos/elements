@@ -19,7 +19,7 @@
 
 #include "codes.h"
 
-Codes::Codes()
+/* Codes::Codes()
 {
     root = code.begin();
     target = code.insert(root,GRAY);
@@ -120,3 +120,4 @@ int Codes::blacks()
     }
     return count;
 }
+*/

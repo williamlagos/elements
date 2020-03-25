@@ -25,7 +25,7 @@
  #include <OpenGL/gl.h>
  #include <OpenGL/glu.h>
 #endif
-#include <Box2D/Box2D.h>
+//#include <Box2D/Box2D.h>
 #include <time.h>
 
 extern int main_window;

@@ -32,11 +32,11 @@ void load_json(const char* name)
 		}
 		stream.close();
 	}
-	JSONNODE* node = json_parse_unformatted(buffer.c_str());
+	/*JSONNODE* node = json_parse_unformatted(buffer.c_str());
 	JSONNODE_ITERATOR i = json_begin(node);
 	while(i != json_end(node)){
 		if(i == JSON_NULL) break;
 		else if(json_type(*i) == JSON_NODE) continue;
 		printf("%s",json_name(*i)); i++;
-	}
+	}*/
 }

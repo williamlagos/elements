@@ -18,19 +18,34 @@
  */
 
 #include <elements.h>
-using namespace elements;
 
-Element::Element(string n)
+class Element {
+private:
+    std::string name;
+    double hitPoints;
+    int height;
+    int width;
+    int speed;
+public:
+    Element(std::string);
+    void hurtElement(double);
+    void healElement(double);
+    void whichSize(int, int);
+    void whichSpeed(int, int);
+};
+
+Element::Element(std::string n)
 {
 	name = n;
-	sprImage = spriteImage();
+//	sprImage = spriteImage();
 }
 
-Geometry* Element::spriteImage()
+/*Geometry* Element::spriteImage()
 {
 	Geometry* sprImg = new Geometry();
 	return sprImg;
-}
+}*/
+
 void Element::hurtElement(double hurtPoints)
 {
 	hitPoints -= hurtPoints;
@@ -46,23 +61,34 @@ void Element::whichSize(int newWidth, int newHeight)
 }
 void Element::whichSpeed(int xAxis, int yAxis)
 {
-	speed = &xAxis;
+	speed = xAxis;
 	speed++;
-	speed = &yAxis;
+	speed = yAxis;
 }
-void Element::update(Scene* sce)
+/*void Element::update(Scene* sce)
 {
 	sce->drawScene();
-}
+}*/
 
+class Elements {
+private:
+    Element* sprites;
+    Element* last;
+    Element* init;
+    int elemCount;
+public:
+    Elements();
+    void addElement(std::string);
+    void remElement();
+};
 
 Elements::Elements()
 {
-	Scene *sce = new Scene();
+//	Scene *sce = new Scene();
 	elemCount = 0;
 }
 
-void Elements::addElement(string n)
+void Elements::addElement(std::string n)
 {
 	if(sprites){
 		sprites++;
@@ -77,7 +103,7 @@ void Elements::addElement(string n)
 void Elements::remElement()
 {
 	Element* removed;
-        if(sprites){
+    if(sprites){
 		removed = last;
 		delete removed;
 		last--; elemCount--;

@@ -18,58 +18,89 @@
  */
 
 #include <elements.h>
-using namespace elements;
+#include <iostream>
+//using namespace elements;
+
+class Source {
+public:
+    void setLooping();
+    void setSound(int);
+    void setGain(float);
+    void setAmbient();
+    void play();
+    void stop();
+};
 
 void Source::setLooping()
 {
   
 }
+
 void Source::setSound(int value)
 {
   
 }
+
 void Source::setGain(float value)
 {
   
 }
+
 void Source::setAmbient()
 {
   
 }
+
 void Source::play()
 {
   
 }
+
 void Source::stop()
 {
   
 }
 
+class Sample {
+public:
+    Sample(std::string);
+    int get();
+};
 
-Sample::Sample(string)
+Sample::Sample(std::string)
 {
   
 }
 
 int Sample::get()
 {
-  
+    return 0;
 }
 
+class Sound {
+private:
+    Source* source;
+public:
+    Sound(Source*);
+    int loadStream(std::string);
+    int playStream();
+    void setEffects();
+    Source* getSource();
+};
 
 Sound::Sound(Source *src)
 {
 	source = src;
 }
 
-int Sound::loadStream(string fileName)
+int Sound::loadStream(std::string fileName)
 {
 	try{
 		source->stop();
 		Sample *sample = new Sample(fileName);
 		source->setSound(sample->get());
-	}catch(Error e){
-		std::cerr << e.getMessage() << "\n";
+	}catch(std::exception e){
+		std::cerr << e.what() << "\n";
 		return -1;
 	}
 	return 0;
@@ -79,8 +110,8 @@ int Sound::playStream()
 	try{
 		source->play();
 		source->stop();
-	}catch(Error e){
-		std::cerr << e.getMessage() << "\n";
+	}catch(std::exception e){
+		std::cerr << e.what() << "\n";
 		return -1;
 	}
 	return 0;

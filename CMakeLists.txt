@@ -1,10 +1,8 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-PROJECT(INVADERS)
-
-IF(UNIX)
-	SET(CMAKE_BUILD_TYPE ${CMAKE_C_FLAGS_DEBUG})
-ENDIF(UNIX)
-
+CMAKE_MINIMUM_REQUIRED(VERSION 3.16)
+PROJECT(elements)
+SET(CMAKE_BUILD_TYPE ${CMAKE_CXX_FLAGS_DEBUG})
+SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
 INCLUDE_DIRECTORIES(include)
-
-ADD_EXECUTABLE(elements.out src/main.cc)
+SET(SOURCES src/main.cc src/audio.cc src/client.cc src/codes.cc src/elements.cc src/graphics.cc src/physics.cc src/player.cc src/render.cc src/sprites.cc)
+SET(INCLUDE include/codes.h include/conversion.h include/elements.h include/geometry.h include/graphics.h include/physics.h)
+ADD_EXECUTABLE(elements ${SOURCES} ${INCLUDE})
