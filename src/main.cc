@@ -47,5 +47,7 @@ int main(int argc, char *argv[])
     int nReturnCode = a.exec();
     delete poAERoshell; */
 
+    cout << "Hello World!" << endl;
+
     return 0;
 }
