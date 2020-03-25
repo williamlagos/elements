@@ -17,15 +17,14 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define _APP_MAIN_CPP_
-#include <iostream>
-#include <elements.h>
-/* #include "aeroshell.h"
-#include <QApplication> */
+#include <main.h>
+
 using namespace std;
 
-int python(int argc,char* argv[])
+int connect(int argc,char* argv[])
 {
+    // TODO: Code for connecting game server
+    
 	/*createGame("Hello World");
 	SDL *sdlHandler = new SDL("HW",0,0);
 	sdlHandler->baseMove();
@@ -36,6 +35,8 @@ int python(int argc,char* argv[])
 
 int main(int argc, char *argv[])
 {
+    // TODO: Code for starting client
+    
     /* Toolbox_malloc  = (void *(__cdecl *)(size_t))malloc;
     Toolbox_calloc  = (void *(__cdecl *)(size_t,size_t))calloc;
     Toolbox_realloc = (void *(__cdecl *)(void*,size_t))realloc;
@@ -44,8 +45,6 @@ int main(int argc, char *argv[])
     AERoshell *poAERoshell = new AERoshell(&a);
     int nReturnCode = a.exec();
     delete poAERoshell; */
-    int var = 20;
     cout << "Hello World!" << endl;
-    while(false) { }
     return 0;
 }

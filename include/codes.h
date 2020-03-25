@@ -22,7 +22,6 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-//#include "tree.h"
 
 #define BLACK 0
 #define WHITE 1
