@@ -17,7 +17,68 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// #include <JSON/libjson.h>
-#include <fstream>
+#ifndef elements_h
+#define elements_h
 
-void load_json(const char* name);
+#include <map>
+#include <string>
+
+using namespace std;
+
+class Euphoria {
+private:
+    bool status;
+public:
+    Euphoria(bool);
+    bool getStatus();
+    int startEngine();
+    int stopEngine();
+};
+
+class Naanphea {
+private:
+    bool status;
+public:
+    Naanphea(bool);
+    bool getStatus();
+    int startEngine();
+    int stopEngine();
+};
+
+class Element {
+private:
+    std::string name;
+    double hitPoints;
+    int height;
+    int width;
+    int speed;
+public:
+    Element(std::string);
+    void hurtElement(double);
+    void healElement(double);
+    void whichSize(int, int);
+    void whichSpeed(int, int);
+};
+
+class Elements {
+private:
+    Naanphea* naanCore;
+    Euphoria* euphCore;
+    void* engineHandler;
+    Element* sprites;
+    Element* last;
+    Element* init;
+    int elemCount;
+    std::map<void*, bool> gameClasses;
+public:
+    Elements();
+    Elements(bool, bool);
+    int chooseGameClass(int);
+    int callelementsModule();
+    void* getEngineHandler();
+    void* getMicroModule();
+    void addElement(std::string);
+    void remElement();
+};
+
+#endif /* elements_h */

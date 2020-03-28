@@ -20,56 +20,22 @@
 #ifndef client_h
 #define client_h
 
-#include <map>
+#include <fstream>
 #include <iostream>
 #include <httplib.h>
 #include <wslib.h>
 #include <json.h>
 
 using namespace json11;
+using namespace std;
 
-class Module {
+class Client {
 private:
     bool status;
 public:
-    Module(bool);
-    void connect();
-};
-
-class Euphoria {
-private:
-    std::string name;
-    bool status;
-public:
-    Euphoria(bool);
-    bool getStatus();
-    int startEngine();
-    int stopEngine();
-};
-
-class Naanphea {
-private:
-    std::string name;
-    bool status;
-public:
-    Naanphea(bool);
-    bool getStatus();
-    int startEngine();
-    int stopEngine();
-};
-
-class Elements {
-private:
-    Naanphea* naanCore;
-    Euphoria* euphCore;
-    void* engineHandler;
-    std::map<void*, bool> gameClasses;
-public:
-    Elements(bool, bool);
-    int chooseGameClass(int);
-    int callelementsModule();
-    void* getEngineHandler();
-    void* getMicroModule();
+    Client(bool);
+    void connectServer();
+    void parseJson(const char*);
 };
 
 #endif /* client_h */

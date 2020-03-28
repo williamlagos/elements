@@ -19,11 +19,11 @@
 
 #include <client.h>
 
-Module::Module(bool stat) {
+Client::Client(bool stat) {
     status = stat;
 }
 
-void Module::connect()
+void Client::connectServer()
 {
     // TODO: Code for connecting game server
     httplib::Client cli("openlibrary.org");
@@ -38,76 +38,23 @@ void Module::connect()
     }
 }
 
-Euphoria::Euphoria(bool stat)
+void Client::parseJson(const char* name)
 {
-    name = "Naanphea";
-	status = stat;
-}
-int Euphoria::startEngine()
-{
-	/* Option not implemented already */
-    return 0;
-}
-int Euphoria::stopEngine()
-{
-	/* Option not implemented already */
-    return 0;
-}
-bool Euphoria::getStatus()
-{
-    return status;
-}
-
-Naanphea::Naanphea(bool stat)
-{
-	name = "Naanphea";
-	status = stat;
-}
-int Naanphea::startEngine()
-{
-	/* Option not implemented already */
-    return 0;
-}
-int Naanphea::stopEngine()
-{
-	/* Option not implemented already */
-    return 0;
-}
-bool Naanphea::getStatus()
-{
-    return status;
-}
-
-
-Elements::Elements(bool naanStatus, bool euphStatus)
-{
-	naanCore = new Naanphea(naanStatus);
-	euphCore = new Euphoria(euphStatus);
-	gameClasses.insert(std::pair<void*,bool>((void*)naanCore,naanCore->getStatus()));
-	gameClasses.insert(std::pair<void*,bool>((void*)euphCore,euphCore->getStatus()));
-}
-int Elements::chooseGameClass(int gameType)
-{
-	switch(gameType){
-	  case 2: gameClasses[(void*)euphCore] = true;
-		  engineHandler = (void*)euphCore;
-		  break;
-	  case 3: gameClasses[(void*)naanCore] = true;
-		  engineHandler = (void*)naanCore;
-		  break;
-	}
-    return 0;
-}
-int Elements::callelementsModule()
-{
-	/* Option not implemented already */
-    return 0;
-}
-void* Elements::getEngineHandler()
-{
-	return engineHandler;
-}
-void* Elements::getMicroModule()
-{
-    return NULL;
+    std::ifstream stream;
+    stream.open("elements.json",ifstream::in);
+    std::string line,buffer;
+    if(stream.is_open()){
+        while(stream.good()){
+            getline(stream,line);
+            buffer.append(line);
+        }
+        stream.close();
+    }
+    /*JSONNODE* node = json_parse_unformatted(buffer.c_str());
+    JSONNODE_ITERATOR i = json_begin(node);
+    while(i != json_end(node)){
+        if(i == JSON_NULL) break;
+        else if(json_type(*i) == JSON_NODE) continue;
+        printf("%s",json_name(*i)); i++;
+    }*/
 }
