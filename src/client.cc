@@ -17,48 +17,28 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "elements.h"
-#include <map>
-//#include "euphoria.h"
-
-class Module {
-private:
-    bool status;
-public:
-    Module(bool);
-    bool getStatus();
-};
+#include <client.h>
 
 Module::Module(bool stat) {
     status = stat;
 }
 
-bool Module::getStatus()
+void Module::connect()
 {
-    return status;
+    // TODO: Code for connecting game server
+    httplib::Client cli("openlibrary.org");
+    auto res = cli.Get("/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json");
+
+    if (res && res->status == 200) {
+        std::string err;
+        auto body = res->body;
+        auto obj = Json::parse(body, err);
+        std::cout << res->body << std::endl;
+        std::cout << obj["LCCN:93005405"]["bib_key"].string_value() << std::endl;
+    }
 }
 
-class Euphoria : public Module {
-private:
-    std::string name;
-    bool status;
-public:
-    Euphoria(bool);
-    int startEngine();
-    int stopEngine();
-};
-
-class Naanphea : public Module {
-private:
-    std::string name;
-    bool status;
-public:
-    Naanphea(bool);
-    int startEngine();
-    int stopEngine();
-};
-
-Euphoria::Euphoria(bool stat) : Module(stat)
+Euphoria::Euphoria(bool stat)
 {
     name = "Naanphea";
 	status = stat;
@@ -73,8 +53,12 @@ int Euphoria::stopEngine()
 	/* Option not implemented already */
     return 0;
 }
+bool Euphoria::getStatus()
+{
+    return status;
+}
 
-Naanphea::Naanphea(bool stat) : Module(stat)
+Naanphea::Naanphea(bool stat)
 {
 	name = "Naanphea";
 	status = stat;
@@ -89,20 +73,11 @@ int Naanphea::stopEngine()
 	/* Option not implemented already */
     return 0;
 }
+bool Naanphea::getStatus()
+{
+    return status;
+}
 
-class Elements {
-private:
-    Naanphea* naanCore;
-    Euphoria* euphCore;
-    void* engineHandler;
-    std::map<void*, bool> gameClasses;
-public:
-    Elements(bool, bool);
-    int chooseGameClass(int);
-    int callelementsModule();
-    void* getEngineHandler();
-    void* getMicroModule();
-};
 
 Elements::Elements(bool naanStatus, bool euphStatus)
 {

@@ -17,53 +17,11 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <httplib.h>
-#include <wslib.h>
-#include <main.h>
-#include <json.h>
 #include <iostream>
-
-using namespace std;
-using namespace json11;
-
-int connect(int argc,char* argv[])
-{
-    // TODO: Code for connecting game server
-    
-	/*createGame("Hello World");
-	SDL *sdlHandler = new SDL("HW",0,0);
-	sdlHandler->baseMove();
-	Python p("Test");
-	p.helloPython();*/
-	return 0;
-}
 
 int main(int argc, char *argv[])
 {
-    // TODO: Code for starting client
-    
-    /* Toolbox_malloc  = (void *(__cdecl *)(size_t))malloc;
-    Toolbox_calloc  = (void *(__cdecl *)(size_t,size_t))calloc;
-    Toolbox_realloc = (void *(__cdecl *)(void*,size_t))realloc;
-    Toolbox_free    = (void (__cdecl *)(void *))free;
-    QApplication a(argc, argv);
-    AERoshell *poAERoshell = new AERoshell(&a);
-    int nReturnCode = a.exec();
-    delete poAERoshell; */
-
-    // IMPORTANT: 1st parameter must be a hostname or an IP adress string.
-    httplib::Client cli("openlibrary.org");
-
-    auto res = cli.Get("/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json");
-
-    if (res && res->status == 200) {
-        string err;
-        auto body = res->body;
-        auto obj = Json::parse(body, err);
-        std::cout << res->body << std::endl;
-        std::cout << obj["LCCN:93005405"]["bib_key"].string_value() << std::endl;
-    }
-    cout << "Hello World!" << endl;
-//    int abc = 0;
-    return 0;
+    // TODO: Code for starting engine
+    std::cout << "Hello World!" << std::endl;
+    return EXIT_SUCCESS;
 }
