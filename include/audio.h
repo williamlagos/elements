@@ -17,30 +17,37 @@
 * along with elements.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef client_h
-#define client_h
+#ifndef audio_h
+#define audio_h
 
-#include <fstream>
 #include <iostream>
-#include <httplib.h>
-#include <wslib.h>
-#include <json.h>
+//using namespace elements;
 
-using namespace json11;
-using namespace std;
+class Source {
+public:
+    void setLooping();
+    void setSound(int);
+    void setGain(float);
+    void setAmbient();
+    void play();
+    void stop();
+};
 
-class Client {
+class Sample {
+public:
+    Sample(std::string);
+    int get();
+};
+
+class Sound {
 private:
-    bool status;
+    Source* source;
 public:
-    Client(bool);
-    void connectServer();
-    void parseJson(const char*);
+    Sound(Source*);
+    int loadStream(std::string);
+    int playStream();
+    void setEffects();
+    Source* getSource();
 };
 
-class Player {
-public:
-    Player();
-};
-
-#endif /* client_h */
+#endif /* audio_h */

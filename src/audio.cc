@@ -17,19 +17,7 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <elements.h>
-#include <iostream>
-//using namespace elements;
-
-class Source {
-public:
-    void setLooping();
-    void setSound(int);
-    void setGain(float);
-    void setAmbient();
-    void play();
-    void stop();
-};
+#include <audio.h>
 
 void Source::setLooping()
 {
@@ -61,12 +49,6 @@ void Source::stop()
   
 }
 
-class Sample {
-public:
-    Sample(std::string);
-    int get();
-};
-
 Sample::Sample(std::string)
 {
   
@@ -76,17 +58,6 @@ int Sample::get()
 {
     return 0;
 }
-
-class Sound {
-private:
-    Source* source;
-public:
-    Sound(Source*);
-    int loadStream(std::string);
-    int playStream();
-    void setEffects();
-    Source* getSource();
-};
 
 Sound::Sound(Source *src)
 {

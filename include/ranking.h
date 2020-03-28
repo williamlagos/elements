@@ -17,14 +17,34 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <elements.h>
+#ifndef ranking_h
+#define ranking_h
+#include <string>
+#include <sstream>
+#include <iostream>
 
-class Player {
+#define BLACK 0
+#define WHITE 1
+#define GRAY 2
+
+using namespace std;
+
+class Codes
+{
+private:
+//    tree<int> code;
+//    tree<int>::iterator root target;
 public:
-    Player();
+    Codes();
+    ~Codes();
+    int blacks();
+    vector<int> sourceTree();
+    string      printTree();
+    string      parseCode(string);
+    string      black();
+    string      white();
+    string      gray();
+    void        clearTree();
 };
 
-Player::Player()
-{
-  
-}
+#endif /* ranking_h */

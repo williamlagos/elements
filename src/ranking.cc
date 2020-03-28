@@ -17,7 +17,7 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "codes.h"
+#include <ranking.h>
 
 /* Codes::Codes()
 {

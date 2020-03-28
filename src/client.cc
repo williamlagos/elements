@@ -58,3 +58,8 @@ void Client::parseJson(const char* name)
         printf("%s",json_name(*i)); i++;
     }*/
 }
+
+Player::Player()
+{
+  
+}
