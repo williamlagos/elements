@@ -17,18 +17,24 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef physics_h
+#define physics_h
+
 //#include <Box2D/Box2D.h>
 
-/*extern b2Body *groundBody,*body;
+class Physics {
+private:
+    /*b2Body *groundBody,*body;
+    b2Vec2 gravity;
+    b2World world;
+    b2BodyDef groundBodyDef,bodyDef;
+    b2PolygonShape groundBox,dynamicBox;
+    b2FixtureDef fixtureDef;*/
+    float timeStep;
+    int velocityIterations,positionIterations;
+public:
+    Physics();
+    void initBOX2D(/*b2World *wrd*/);
+};
 
-extern b2Vec2 gravity;
-extern b2World world;
-extern b2BodyDef groundBodyDef,bodyDef;
-extern b2PolygonShape groundBox,dynamicBox;
-extern b2FixtureDef fixtureDef;
-
-extern float32 timeStep;
-extern int32 velocityIterations,positionIterations;
-
-void initBOX2D(b2World *wrd);
-*/
+#endif /* physics_h */

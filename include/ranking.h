@@ -19,9 +19,11 @@
 
 #ifndef ranking_h
 #define ranking_h
+
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <tree.h>
 
 #define BLACK 0
 #define WHITE 1
@@ -32,8 +34,8 @@ using namespace std;
 class Codes
 {
 private:
-//    tree<int> code;
-//    tree<int>::iterator root target;
+    tree<int> code;
+    tree<int>::iterator root, target;
 public:
     Codes();
     ~Codes();

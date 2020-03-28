@@ -17,22 +17,22 @@
  * along with elements.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "physics.h"
+#include <physics.h>
 
-/*b2Vec2 gravity(0.0f, -10.0f);
-b2World world(gravity);
+Physics::Physics()
+{
+    /*b2Vec2 gravity(0.0f, -10.0f);
+    b2World world(gravity);
+    b2Body *groundBody,*body;
+    b2BodyDef groundBodyDef,bodyDef;
+    b2PolygonShape groundBox,dynamicBox;
+    b2FixtureDef fixtureDef;*/
+    timeStep = 1.0f / 60.0f;
+    velocityIterations = 6;
+    positionIterations = 2;
+}
 
-b2Body *groundBody,*body;
-
-b2BodyDef groundBodyDef,bodyDef;
-b2PolygonShape groundBox,dynamicBox;
-b2FixtureDef fixtureDef;*/
-
-float timeStep;
-int velocityIterations,positionIterations;
-
-void
-initBOX2D(/*b2World* wrd*/)
+void Physics::initBOX2D(/*b2World* wrd*/)
 {
 	/*groundBodyDef.position.Set(0.0f, -10.0f);
 	groundBody = world.CreateBody(&groundBodyDef);
@@ -47,11 +47,6 @@ initBOX2D(/*b2World* wrd*/)
 	fixtureDef.shape = &dynamicBox;
 	fixtureDef.density = 1.0f;
 	fixtureDef.friction = 0.3f;
-	body->CreateFixture(&fixtureDef);*/
-
-	timeStep = 1.0f / 60.0f;
-	velocityIterations = 6;
-	positionIterations = 2;
-	
-//	wrd = &world;
+	body->CreateFixture(&fixtureDef);
+	wrd = &world;*/
 }
