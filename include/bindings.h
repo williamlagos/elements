@@ -17,9 +17,10 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "zhockon/zhockon.h"
-#include "naanphea/naanphea.h"
-#include "euphoria/euphoria.h"
+#ifndef BINDINGS_H
+#define BINDINGS_H
+
+#include <dinamo.h>
 #include <utility>
 #include <map>
 #include <iostream>
@@ -91,3 +92,5 @@ public:
 	void* getEngineHandler();
 	void* getMicroModule();
 };
+
+#endif /* BINDINGS_H */

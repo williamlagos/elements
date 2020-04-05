@@ -17,10 +17,11 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ZHOCKON_H
-#define ZHOCKON_H
-#include "base.h"
-#include "platform.h"
+#ifndef DINAMO_H
+#define DINAMO_H
+
+#include <structures.h>
+#include <platform.h>
 #include <iostream>
 #include <Python.h>
 
@@ -211,4 +212,5 @@ void createGame(string);
 void deleteGame(string);
 void listModules();
 };
-#endif
+
+#endif /* DINAMO_H */

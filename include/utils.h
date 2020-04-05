@@ -17,8 +17,8 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef utils_h
-#define utils_h
+#ifndef UTILS_H
+#define UTILS_H
 
 #include "JSONDebug.h"
 #ifdef JSON_LESS_MEMORY
@@ -361,4 +361,4 @@ public:
     #endif
 };
 
-#endif /* utils_h */
+#endif /* UTILS_H */

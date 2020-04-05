@@ -17,7 +17,10 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "parser.h"
+#ifndef NETWORK_H
+#define NETWORK_H
+
+#include <parsing.h>
 #include <pthread.h>
 #include <jsonrpc.h>
 #include <string>
@@ -68,3 +71,5 @@ void* ManagerThread(void*);
 void* SubjectThread(void*);
 //void* SendMethod(void*);
 };
+
+#endif /* NETWORK_H */

@@ -17,7 +17,7 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <zhockon.h>
+#include <structures.h>
 using namespace Zhockon;
 
 template<typename T>

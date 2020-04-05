@@ -17,7 +17,7 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "coronae.h"
+#include <network.h>
 using namespace Json;
 
 namespace Coronae{

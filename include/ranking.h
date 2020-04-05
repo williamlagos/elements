@@ -17,8 +17,8 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ranking_h
-#define ranking_h
+#ifndef RANKING_H
+#define RANKING_H
 
 #include <string>
 #include <sstream>
@@ -49,4 +49,4 @@ public:
     void        clearTree();
 };
 
-#endif /* ranking_h */
+#endif /* RANKING_H */

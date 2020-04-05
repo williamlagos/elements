@@ -17,8 +17,8 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef elements_h
-#define elements_h
+#ifndef ELEMENTS_H
+#define ELEMENTS_H
 
 #include <map>
 #include <string>
@@ -81,4 +81,4 @@ public:
     void remElement();
 };
 
-#endif /* elements_h */
+#endif /* ELEMENTS_H */

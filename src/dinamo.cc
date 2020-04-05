@@ -17,7 +17,7 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <zhockon.h>
+#include <dinamo.h>
 #include <Python.h>
 
 namespace Zhockon{

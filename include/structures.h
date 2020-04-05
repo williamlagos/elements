@@ -17,8 +17,9 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef STRUCTURE_H
-#define STRUCTURE_H
+#ifndef STRUCTURES_H
+#define STRUCTURES_H
+
 #include<string>
 #include<queue>
 #include<stack>
@@ -116,4 +117,5 @@ struct Structure
 
 extern Structure baseStr;
 };
-#endif
+
+#endif /* STRUCTURES_H */

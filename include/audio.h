@@ -17,8 +17,8 @@
 * along with elements. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef audio_h
-#define audio_h
+#ifndef AUDIO_H
+#define AUDIO_H
 
 #include <iostream>
 //using namespace elements;
@@ -50,4 +50,4 @@ public:
     Source* getSource();
 };
 
-#endif /* audio_h */
+#endif /* AUDIO_H */

@@ -17,8 +17,8 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef graphics_h
-#define graphics_h
+#ifndef GRAPHICS_H
+#define GRAPHICS_H
 
 /*#include <GLUT/glut.h>
 #ifndef __APPLE__
@@ -113,4 +113,4 @@ struct TexRect
 
 #endif // TEXRECT_H
 
-#endif /* graphics_h */
+#endif /* GRAPHICS_H */

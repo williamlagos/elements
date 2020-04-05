@@ -17,7 +17,7 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "parser.h"
+#include <parsing.h>
 
 void load_json(const char* name)
 {

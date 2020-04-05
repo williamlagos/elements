@@ -17,8 +17,8 @@
 * along with elements. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef client_h
-#define client_h
+#ifndef CLIENT_H
+#define CLIENT_H
 
 #include <fstream>
 #include <iostream>
@@ -43,4 +43,4 @@ public:
     Player();
 };
 
-#endif /* client_h */
+#endif /* CLIENT_H */

@@ -17,8 +17,8 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef physics_h
-#define physics_h
+#ifndef PHYSICS_H
+#define PHYSICS_H
 
 //#include <Box2D/Box2D.h>
 
@@ -37,4 +37,4 @@ public:
     void initBOX2D(/*b2World *wrd*/);
 };
 
-#endif /* physics_h */
+#endif /* PHYSICS_H */

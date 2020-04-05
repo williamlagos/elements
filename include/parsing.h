@@ -17,6 +17,9 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef PARSING_H
+#define PARSING_H
+
 #include <libjson.h>
 #include <fstream>
 #include <map>
@@ -36,3 +39,5 @@ public:
 	Reader();
 	void parse(std::string,Value&);
 };
+
+#endif /* PARSING_H */

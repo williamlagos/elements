@@ -17,7 +17,7 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <zhockon.h>
+#include <dinamo.h>
 using namespace Zhockon;
 
 Binding::Binding(string n) : Module(n,status)

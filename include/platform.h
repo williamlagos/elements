@@ -17,6 +17,9 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef PLATFORM_H
+#define PLATFORM_H
+
 /*#include <osgAL/SoundManager>
 #include <osg/Group>
 #include <osg/Geode>
@@ -68,3 +71,5 @@ public:
 static void baseScene(void);
 static void baseReshape(int,int);
 };
+
+#endif /* PLATFORM_H */
