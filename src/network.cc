@@ -18,15 +18,15 @@
  */
 
 #include <network.h>
-using namespace Json;
+//using namespace Json;
 
 Adapter::Adapter(string name){
-	networking::init();
+//	networking::init();
 	adapterName = name;
 }
 Adapter::~Adapter()
 {
-	networking::cleanup();
+//	networking::cleanup();
 }
 
 bool Adapter::Init()
@@ -47,17 +47,17 @@ string Adapter::methodCall(char* methodName){
 	Value query;
 	string quryString;
 	string rpseString;
-	query["jsonrpc"] = JSONRPC_VERSION; 
-	query["id"] = STD_ID;
-	query["method"] = methodName;
+//	query["jsonrpc"] = JSONRPC_VERSION;
+//	query["id"] = STD_ID;
+//	query["method"] = methodName;
 	quryString = writer.write(query);
-	Rpc::TcpClient* Sender = new Rpc::TcpClient(HOST,PORT);
-	Sender->Connect();
-	Sender->Send(quryString);
-	Sender->Recv(rpseString);
+//	Rpc::TcpClient* Sender = new Rpc::TcpClient(HOST,PORT);
+//	Sender->Connect();
+//	Sender->Send(quryString);
+//	Sender->Recv(rpseString);
 	Value value;
 	read.parse(rpseString,value);
-	rpseString = value["result"];
+//	rpseString = value["result"];
 	return rpseString;
 }
 string Adapter::getAdapterName()
@@ -73,20 +73,20 @@ Creator::Creator(){
 
 bool Connector::baseMethod(const Value& root, Value& response)
 {
-	response["jsonrpc"] = JSONRPC_VERSION; response["id"] = STD_ID;
-	response["result"] = "Coronae has received the message.";
+//	response["jsonrpc"] = JSONRPC_VERSION; response["id"] = STD_ID;
+//	response["result"] = "Coronae has received the message.";
 	return true;
 }
 
 
 bool CoronaeInit()
 {
-	networking::init();
+//	networking::init();
 	pthread_t coronaeServerThread;
 	pthread_create(&coronaeServerThread,NULL,
 		       ManagerThread,NULL);
 	pthread_join(coronaeServerThread,NULL);
-	networking::cleanup();
+//	networking::cleanup();
 }
 bool CoronaeCall()
 {
@@ -108,12 +108,12 @@ void* ManagerThread(void* stdParam)
 void* SubjectThread(void* msgParam)
 {	
 	Message* Msg = (Message*)msgParam;
-	Rpc::TcpClient* Subj = new Rpc::TcpClient(HOST,PORT);
+//	Rpc::TcpClient* Subj = new Rpc::TcpClient(HOST,PORT);
 	string queryString = string(Msg->queryMsg);
 	string responseString;
-	Subj->Connect();
-	Subj->Send(queryString);
-	Subj->Recv(responseString);
+//	Subj->Connect();
+//	Subj->Send(queryString);
+//	Subj->Recv(responseString);
 	strcpy(Msg->repseMsg,responseString.c_str());
 	msgParam = Msg;
 	pthread_exit(NULL);

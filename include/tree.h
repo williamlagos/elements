@@ -31,16 +31,20 @@ enum treePrints{
     POST_ORDER = 3
 };
 
-struct Content
-{
-    string data;
-};
+class Content;
 
 struct Node
 {
     Node* left;
     Node* right;
     Content* data;
+};
+
+class Content {
+private:
+    string name;
+public:
+    string getName();
 };
 
 class Tree{

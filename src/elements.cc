@@ -118,9 +118,9 @@ void Element::whichSize(int newWidth, int newHeight)
 }
 void Element::whichSpeed(int xAxis, int yAxis)
 {
-    speed = xAxis;
+    speed = &xAxis;
     speed++;
-    speed = yAxis;
+    speed = &yAxis;
 }
 /*void Element::update(Scene* sce)
 {

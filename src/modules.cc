@@ -94,7 +94,7 @@ Package accessPackage()
 }
 void createGame(string gamName)
 {
-	Module *newGame = new Module(gamName,true);
+    Content *newGame = new Content();
 	baseStr.mainTree.insert(newGame);
 }
 void deleteGame(string gamName)

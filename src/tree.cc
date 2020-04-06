@@ -21,11 +21,15 @@
 
 using namespace std;
 
+string Content::getName() {
+    return this->name;
+}
+
 void Tree::insert(Content* content)
 {
     Node* nod = new Node;
     Node* parent;
-    nod->data = module;
+    nod->data = content;
     nod->left = NULL;
     nod->right = NULL;
     parent = NULL;

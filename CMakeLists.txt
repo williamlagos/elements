@@ -26,6 +26,7 @@ set(INCLUDE
     include/network.h
     include/matrix.h 
     include/tree.h 
+    vendor/tree.hh
     vendor/json.h 
     vendor/httplib.h 
     vendor/wslib.h)

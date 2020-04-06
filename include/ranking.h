@@ -23,7 +23,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-#include <tree.h>
+#include <tree.hh>
 
 #define BLACK 0
 #define WHITE 1

@@ -20,17 +20,14 @@
 #ifndef MODULES_H
 #define MODULES_H
 
-#include <platform.h>
 #include <iostream>
+#include <vector>
+#include <stack>
+#include <queue>
 
-using std::cout;
-using std::endl;
-using std::string;
+#include <tree.h>
 
-/*OpenGL Primitives
-GL_POINTS,GL_LINES,GL_LINE_LOOP,GL_LINE_STRIP,GL_TRIANGLES,
-GL_TRIANGLE_STRIP,GL_TRIANGLE_FAN,GL_QUADS,GL_QUAD_STRIP,GL_POLYGON
-*/
+using namespace std;
 
 struct Info{
 	string name;
@@ -88,7 +85,6 @@ struct Structure
 };
 
 extern Structure baseStr;
-};
 
 Package accessPackage(string);
 int newPackage(int);

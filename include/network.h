@@ -20,17 +20,33 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-#include <pthread.h>
-#include <jsonrpc.h>
 #include <string>
 #include <cstring>
+#include <map>
+#include <fstream>
+#include <iostream>
+
+//#include <jsonrpc.h>
+#include <pthread.h>
+#include <httplib.h>
+#include <wslib.h>
+#include <json.h>
+
+#include <modules.h>
 
 #define HOST "127.0.0.1"
 #define PORT 4004
 #define JSONRPC_VERSION "2.0"
 #define STD_ID "1"
-using namespace Json;
-using std::string;
+
+using namespace json11;
+using namespace std;
+
+typedef std::map<std::string,const char*> Value;
+
+struct View {
+    
+};
 
 struct Message{
 	char queryMsg[100];
@@ -58,9 +74,8 @@ public:
 class Connector{
 public:
 	Connector(){};
-	bool baseMethod(const Value&,Value&);
+	bool baseMethod(const Value&, Value&);
 };
-
 
 //bool RemMethod(string);
 bool CoronaeInit();
@@ -69,20 +84,10 @@ void* ManagerThread(void*);
 void* SubjectThread(void*);
 //void* SendMethod(void*);
 
-class Network : Package{ public: Network(); };
-
-#include <map>
-#include <fstream>
-#include <iostream>
-#include <modules.h>
-#include <httplib.h>
-#include <wslib.h>
-#include <json.h>
-
-using namespace json11;
-using namespace std;
-
-typedef std::map<std::string,const char*> Value;
+class Network {
+public:
+    Network();
+};
 
 class FastWriter{
 public:
