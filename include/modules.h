@@ -86,13 +86,17 @@ struct Structure
 
 extern Structure baseStr;
 
-Package accessPackage(string);
-int newPackage(int);
-int exeModule(string);
-bool Init();
-void readConfig();
-void createGame(string);
-void deleteGame(string);
-void listModules();
+class Handler {
+public:
+    Handler();
+    Package accessPackage(string);
+    int newPackage(int);
+    int exeModule(string);
+    bool Init();
+    void readConfig();
+    void createGame(string);
+    void deleteGame(string);
+    void listModules();
+};
 
 #endif /* MODULES_H */

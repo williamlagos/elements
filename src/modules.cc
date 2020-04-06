@@ -66,7 +66,12 @@ int Package::numOfModules()
 	return modules.size();
 }
 
-bool Init()
+
+Handler::Handler() {
+    
+}
+
+bool Handler::Init()
 {
 	Node* root = baseStr.mainTree.getRoot();
 	/*string Packages[3] = {"Elements","Ranking","Network"};
@@ -75,14 +80,15 @@ bool Init()
 	return true;
 }
 
-int newPackage(string* name, int times)
+int Handler::newPackage(int times)
 {
 	for(int i = 0; i < times; i++){
 		Package lay;
 		baseStr.pakStack.push(lay);
 	}
 }
-Package accessPackage()
+
+Package Handler::accessPackage(string value)
 {
 	stack<Package> stackTemp = baseStr.pakStack;
 	while(!stackTemp.empty()){
@@ -92,25 +98,30 @@ Package accessPackage()
 	}
 	stackTemp.pop();
 }
-void createGame(string gamName)
+
+void Handler::createGame(string gamName)
 {
     Content *newGame = new Content();
 	baseStr.mainTree.insert(newGame);
 }
-void deleteGame(string gamName)
+
+void Handler::deleteGame(string gamName)
 {
 	baseStr.mainTree.remove(gamName);
 }
-int exeModule(string name)
+
+int Handler::exeModule(string name)
 {
 	Module mod(name,true);
 	baseStr.modExec.push(mod);
 }
-void listModules()
+
+void Handler::listModules()
 {
 	baseStr.mainTree.print(1);
 }
-void readConfig()
+
+void Handler::readConfig()
 {
 	/*Python p("Configuration");
 	p.loadModule("ConfigParser");

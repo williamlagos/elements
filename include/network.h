@@ -77,16 +77,15 @@ public:
 	bool baseMethod(const Value&, Value&);
 };
 
-//bool RemMethod(string);
-bool Init();
-bool Call();
-void* ManagerThread(void*);
-void* SubjectThread(void*);
-//void* SendMethod(void*);
-
 class Network {
 public:
     Network();
+    //bool RemMethod(string);
+    bool Init();
+    bool Call();
+    void* ManagerThread(void*);
+    void* SubjectThread(void*);
+    //void* SendMethod(void*);
 };
 
 class FastWriter{
