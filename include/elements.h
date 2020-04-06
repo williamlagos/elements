@@ -26,24 +26,14 @@
 
 using namespace std;
 
-class Euphoria {
+class Engine {
 private:
     bool status;
 public:
-    Euphoria(bool);
+    Engine(bool);
     bool getStatus();
-    int startEngine();
-    int stopEngine();
-};
-
-class Naanphea {
-private:
-    bool status;
-public:
-    Naanphea(bool);
-    bool getStatus();
-    int startEngine();
-    int stopEngine();
+    int start();
+    int stop();
 };
 
 class Element{ //Elements
@@ -67,8 +57,7 @@ public:
 
 class Elements {
 private:
-    Naanphea* naanCore;
-    Euphoria* euphCore;
+    Engine* core;
     void* engineHandler;
     Element* sprites;
     Element* last;
@@ -77,7 +66,7 @@ private:
     std::map<void*, bool> gameClasses;
 public:
     Elements();
-    Elements(bool, bool);
+    Elements(bool);
     int chooseGameClass(int);
     int callelementsModule();
     void* getEngineHandler();

@@ -19,60 +19,35 @@
 
 #include <elements.h>
 
-Euphoria::Euphoria(bool stat)
+Engine::Engine(bool stat)
 {
     status = stat;
 }
-int Euphoria::startEngine()
+int Engine::start()
 {
     /* Option not implemented already */
     return 0;
 }
-int Euphoria::stopEngine()
+int Engine::stop()
 {
     /* Option not implemented already */
     return 0;
 }
-bool Euphoria::getStatus()
+bool Engine::getStatus()
 {
     return status;
 }
 
-Naanphea::Naanphea(bool stat)
+Elements::Elements(bool status)
 {
-    status = stat;
-}
-int Naanphea::startEngine()
-{
-    /* Option not implemented already */
-    return 0;
-}
-int Naanphea::stopEngine()
-{
-    /* Option not implemented already */
-    return 0;
-}
-bool Naanphea::getStatus()
-{
-    return status;
-}
-
-
-Elements::Elements(bool naanStatus, bool euphStatus)
-{
-    naanCore = new Naanphea(naanStatus);
-    euphCore = new Euphoria(euphStatus);
-    gameClasses.insert(std::pair<void*,bool>((void*)naanCore,naanCore->getStatus()));
-    gameClasses.insert(std::pair<void*,bool>((void*)euphCore,euphCore->getStatus()));
+    core = new Engine(status);
+    gameClasses.insert(std::pair<void*,bool>((void*)core,core->getStatus()));
 }
 int Elements::chooseGameClass(int gameType)
 {
     switch(gameType){
-      case 2: gameClasses[(void*)euphCore] = true;
-          engineHandler = (void*)euphCore;
-          break;
-      case 3: gameClasses[(void*)naanCore] = true;
-          engineHandler = (void*)naanCore;
+      case 2: gameClasses[(void*)core] = true;
+          engineHandler = (void*)core;
           break;
     }
     return 0;

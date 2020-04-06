@@ -66,10 +66,10 @@ int Package::numOfModules()
 	return modules.size();
 }
 
-bool ZhockonInit()
+bool Init()
 {
 	Node* root = baseStr.mainTree.getRoot();
-	/*string Packages[3] = {"Zhockon","ZKN","Coronae"};
+	/*string Packages[3] = {"Elements","Ranking","Network"};
 	newPackage((string*)Packages,3);*/
 	readConfig();
 	return true;

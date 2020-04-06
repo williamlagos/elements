@@ -78,8 +78,8 @@ public:
 };
 
 //bool RemMethod(string);
-bool CoronaeInit();
-bool CoronaeCall();
+bool Init();
+bool Call();
 void* ManagerThread(void*);
 void* SubjectThread(void*);
 //void* SendMethod(void*);

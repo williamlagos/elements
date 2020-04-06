@@ -89,7 +89,7 @@ extern Structure baseStr;
 Package accessPackage(string);
 int newPackage(int);
 int exeModule(string);
-bool ZhockonInit();
+bool Init();
 void readConfig();
 void createGame(string);
 void deleteGame(string);

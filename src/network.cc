@@ -74,24 +74,24 @@ Creator::Creator(){
 bool Connector::baseMethod(const Value& root, Value& response)
 {
 //	response["jsonrpc"] = JSONRPC_VERSION; response["id"] = STD_ID;
-//	response["result"] = "Coronae has received the message.";
+//	response["result"] = "Network has received the message.";
 	return true;
 }
 
 
-bool CoronaeInit()
+bool Init()
 {
 //	networking::init();
-	pthread_t coronaeServerThread;
-	pthread_create(&coronaeServerThread,NULL,
+	pthread_t serverThread;
+	pthread_create(&serverThread,NULL,
 		       ManagerThread,NULL);
-	pthread_join(coronaeServerThread,NULL);
+	pthread_join(serverThread,NULL);
 //	networking::cleanup();
 }
-bool CoronaeCall()
+bool Call()
 {
-	pthread_t coronaeClientThread;
-	pthread_create(&coronaeClientThread,NULL,
+	pthread_t clientThread;
+	pthread_create(&clientThread,NULL,
 		       SubjectThread,NULL);
 }
 void* ManagerThread(void* stdParam)
