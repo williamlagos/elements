@@ -59,6 +59,26 @@ void Client::parseJson(const char* name)
     }*/
 }
 
+Reader::Reader()
+{
+
+}
+
+void Reader::parse(std::string str,Value &val)
+{
+
+}
+
+FastWriter::FastWriter()
+{
+
+}
+
+std::string FastWriter::write(Value &val)
+{
+
+}
+
 Player::Player()
 {
   

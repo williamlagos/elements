@@ -1,6 +1,6 @@
 /*
  * This file is part of elements project.
- * 
+ *
  * Copyright (C) 2009-2011 William Oliveira de Lagos <william.lagos@icloud.com>
  *
  * Elements is free software: you can redistribute it and/or modify
@@ -17,45 +17,45 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <parsing.h>
+#ifndef TREE_H
+#define TREE_H
 
-void load_json(const char* name)
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+enum treePrints{
+    IN_ORDER = 1,
+    PRE_ORDER = 2,
+    POST_ORDER = 3
+};
+
+struct Content
 {
-	std::ifstream stream;
-	stream.open("elements.json",std::ifstream::in);
-	std::string line,buffer;
-	if(stream.is_open()){
-		while(stream.good()){
-			getline(stream,line);
-			buffer.append(line);
-		}
-		stream.close();
-	}
-	JSONNODE* node = json_parse_unformatted(buffer.c_str());
-	JSONNODE_ITERATOR i = json_begin(node);
-	while(i != json_end(node)){
-		if(i == JSON_NULL) break;
-		else if(json_type(*i) == JSON_NODE) continue;
-		printf("%s",json_name(*i)); i++;
-	}
-}
+    string data;
+};
 
-Reader::Reader()
+struct Node
 {
+    Node* left;
+    Node* right;
+    Content* data;
+};
 
-}
+class Tree{
+private:
+    Node* root;
+public:
+    Tree(){ root = NULL; }
+    Node* getRoot(){ return root; }
+    bool isEmpty() const { return root==NULL; }
+    void print(int);
+    void inOrder(Node*);
+    void preOrder(Node*);
+    void postOrder(Node*);
+    void insert(Content*);
+    void remove(string);
+};
 
-void Reader::parse(std::string str,Value &val)
-{
-
-}
-
-FastWriter::FastWriter()
-{
-
-}
-
-std::string FastWriter::write(Value &val)
-{
-
-}
+#endif /* TREE_H */

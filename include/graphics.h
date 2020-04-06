@@ -101,6 +101,22 @@ public:
     void drawScene();
 };
 
+class View{
+public:
+      View();
+      void setSceneData();
+      void run();
+};
+
+class Graphics {
+private:
+    Surface *surface;
+    Geometry *geometry;
+    Scene *scene;
+public:
+    Graphics();
+};
+
 #ifndef TEXRECT_H
 #define TEXRECT_H
 

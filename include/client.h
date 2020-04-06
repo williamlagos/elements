@@ -20,14 +20,30 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
+#include <map>
 #include <fstream>
 #include <iostream>
+#include <modules.h>
 #include <httplib.h>
 #include <wslib.h>
 #include <json.h>
 
 using namespace json11;
 using namespace std;
+
+typedef std::map<std::string,const char*> Value;
+
+class FastWriter{
+public:
+    FastWriter();
+    std::string write(Value&);
+};
+
+class Reader{
+public:
+    Reader();
+    void parse(std::string,Value&);
+};
 
 class Client {
 private:
@@ -39,6 +55,8 @@ public:
 };
 
 class Player {
+private:
+    View* view;
 public:
     Player();
 };

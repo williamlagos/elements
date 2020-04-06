@@ -8,6 +8,35 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 include_directories(vendor)
-set(SOURCES src/main.cc src/audio.cc src/ranking.cc src/graphics.cc src/physics.cc src/client.cc  vendor/json.cc vendor/wslib.cc)
-set(INCLUDE include/utils.h include/audio.h include/ranking.h include/elements.h include/graphics.h include/physics.h include/client.h vendor/tree.h vendor/json.h vendor/httplib.h vendor/wslib.h)
+set(SOURCES 
+    src/main.cc 
+    src/audio.cc
+    src/modules.cc
+    src/ranking.cc 
+    src/elements.cc
+    src/graphics.cc
+    src/network.cc
+    src/platform.cc 
+    src/physics.cc
+    src/matrix.cc 
+    src/tree.cc
+    src/client.cc  
+    vendor/json.cc 
+    vendor/wslib.cc)
+set(INCLUDE 
+    include/utils.h 
+    include/audio.h
+    include/modules.h 
+    include/ranking.h 
+    include/elements.h 
+    include/graphics.h 
+    include/network.h
+    include/physics.h
+    include/platform.h 
+    include/client.h
+    include/matrix.h 
+    include/tree.h 
+    vendor/json.h 
+    vendor/httplib.h 
+    vendor/wslib.h)
 add_executable(elements ${SOURCES} ${INCLUDE})

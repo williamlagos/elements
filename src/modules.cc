@@ -17,10 +17,8 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <dinamo.h>
-#include <Python.h>
+#include <modules.h>
 
-namespace Zhockon{
 Structure baseStr;
 Info infoVer;
 
@@ -118,4 +116,3 @@ void readConfig()
 	p.loadModule("ConfigParser");
 	p.newObject("ConfigParser","");*/
 }
-};

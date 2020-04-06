@@ -17,27 +17,30 @@
  * along with elements. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PARSING_H
-#define PARSING_H
+#ifndef MATRIX_H
+#define MATRIX_H
 
-#include <libjson.h>
-#include <fstream>
-#include <map>
+#include<string>
+#include<queue>
+#include<stack>
+#include<vector>
 
-void load_json(const char* name);
+using namespace std;
 
-typedef std::map<std::string,const char*> Value;
-
-class FastWriter{
+template<typename T>
+class Matrix{
+private:
+	vector<vector<T>*> base;
+	int numOfCols;
+	int numOfRows;
 public:
-	FastWriter();
-	std::string write(Value&);
+	Matrix(int);
+	vector<T> createCol();
+	void createRow();
+	void clean();
+	void insert(T*);
+	void remove(T*);
+	void search(string);
 };
 
-class Reader{
-public:
-	Reader();
-	void parse(std::string,Value&);
-};
-
-#endif /* PARSING_H */
+#endif /* MATRIX_H */

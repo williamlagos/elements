@@ -50,4 +50,12 @@ public:
     Source* getSource();
 };
 
+class Audio {
+private:
+    Source *source;
+    Sound *sound;
+public:
+    Audio();
+};
+
 #endif /* AUDIO_H */

@@ -21,6 +21,7 @@
 #define PHYSICS_H
 
 //#include <Box2D/Box2D.h>
+#include <modules.h>
 
 class Physics {
 private:
@@ -35,6 +36,18 @@ private:
 public:
     Physics();
     void initBOX2D(/*b2World *wrd*/);
+};
+
+class Control { //Input
+public:
+    Control();
+};
+
+class Input : Package{
+private:
+    Control *control;
+public:
+    Input();
 };
 
 #endif /* PHYSICS_H */

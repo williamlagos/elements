@@ -22,6 +22,7 @@
 
 #include <map>
 #include <string>
+//#include <graphics.h>
 
 using namespace std;
 
@@ -45,19 +46,23 @@ public:
     int stopEngine();
 };
 
-class Element {
+class Element{ //Elements
 private:
-    std::string name;
-    double hitPoints;
-    int height;
+    int* speed;
     int width;
-    int speed;
+    int height;
+    int position;
+    string name;
+    double hitPoints;
+//    Geometry* sprImage;
 public:
-    Element(std::string);
+    Element(string);
+//    Geometry* spriteImage();
     void hurtElement(double);
     void healElement(double);
-    void whichSize(int, int);
-    void whichSpeed(int, int);
+    void whichSize(int,int);
+    void whichSpeed(int,int);
+//    void update(Scene*);
 };
 
 class Elements {

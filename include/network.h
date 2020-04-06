@@ -20,7 +20,6 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-#include <parsing.h>
 #include <pthread.h>
 #include <jsonrpc.h>
 #include <string>
@@ -33,7 +32,6 @@
 using namespace Json;
 using std::string;
 
-namespace Coronae{
 struct Message{
 	char queryMsg[100];
 	char repseMsg[100];
@@ -70,6 +68,7 @@ bool CoronaeCall();
 void* ManagerThread(void*);
 void* SubjectThread(void*);
 //void* SendMethod(void*);
-};
+
+class Network : Package{ public: Network(); };
 
 #endif /* NETWORK_H */
