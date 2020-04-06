@@ -20,7 +20,6 @@
 #include <network.h>
 using namespace Json;
 
-namespace Coronae{
 Adapter::Adapter(string name){
 	networking::init();
 	adapterName = name;
@@ -119,4 +118,69 @@ void* SubjectThread(void* msgParam)
 	msgParam = Msg;
 	pthread_exit(NULL);
 }
-};
+
+Client::Client(bool stat) {
+    status = stat;
+}
+
+void Client::connectServer()
+{
+    // TODO: Code for connecting game server
+    httplib::Client cli("openlibrary.org");
+    auto res = cli.Get("/api/books?bibkeys=ISBN:0201558025,LCCN:93005405&format=json");
+
+    if (res && res->status == 200) {
+        std::string err;
+        auto body = res->body;
+        auto obj = Json::parse(body, err);
+        std::cout << res->body << std::endl;
+        std::cout << obj["LCCN:93005405"]["bib_key"].string_value() << std::endl;
+    }
+}
+
+void Client::parseJson(const char* name)
+{
+    std::ifstream stream;
+    stream.open("elements.json",ifstream::in);
+    std::string line,buffer;
+    if(stream.is_open()){
+        while(stream.good()){
+            getline(stream,line);
+            buffer.append(line);
+        }
+        stream.close();
+    }
+    /*JSONNODE* node = json_parse_unformatted(buffer.c_str());
+    JSONNODE_ITERATOR i = json_begin(node);
+    while(i != json_end(node)){
+        if(i == JSON_NULL) break;
+        else if(json_type(*i) == JSON_NODE) continue;
+        printf("%s",json_name(*i)); i++;
+    }*/
+}
+
+Reader::Reader()
+{
+
+}
+
+void Reader::parse(std::string str,Value &val)
+{
+
+}
+
+FastWriter::FastWriter()
+{
+
+}
+
+std::string FastWriter::write(Value &val)
+{
+
+}
+
+Player::Player()
+{
+  
+}
+
