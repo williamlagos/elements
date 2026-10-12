@@ -21,9 +21,8 @@
 #define RANKING_H
 
 #include <string>
-#include <sstream>
-#include <iostream>
-#include <tree.hh>
+#include <vector>
+#include <memory>
 
 #define BLACK 0
 #define WHITE 1
@@ -34,8 +33,8 @@ using namespace std;
 class Codes
 {
 private:
-    tree<int> code;
-    tree<int>::iterator root, target;
+    struct Impl;
+    std::shared_ptr<Impl> pImpl;
 public:
     Codes();
     ~Codes();

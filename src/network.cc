@@ -31,8 +31,7 @@ Adapter::~Adapter()
 
 bool Adapter::Init()
 {
-//	pthread_t adapterServerThread;
-//	pthread_create(&adapterServerThread,NULL,ManagerThread,NULL);
+	return true;
 }
 string Adapter::methodCall(char* methodName){
 	//SubjectThread Init
@@ -84,29 +83,17 @@ Network::Network()
 
 bool Network::Init()
 {
-//	networking::init();
-//	pthread_t serverThread;
-//	pthread_create(&serverThread,NULL,this->ManagerThread,NULL);
-//	pthread_join(serverThread,NULL);
-//	networking::cleanup();
+	return true;
 }
 
 bool Network::Call()
 {
-//	pthread_t clientThread;
-//	pthread_create(&clientThread,NULL,this->SubjectThread,NULL);
+	return true;
 }
 
 void* Network::ManagerThread(void* stdParam)
 {
-    /* Connector Conn;
-	Rpc::TcpServer* Mngr = new Rpc::TcpServer(HOST,PORT);
-	Mngr->AddMethod(new Rpc::RpcMethod<Connector>(Conn,
-			&Connector::baseMethod,string("base_method")));
-	Mngr->Bind();
-	Mngr->Listen();
-	while(1){ Mngr->WaitMessage(1000); }
-	pthread_exit(Mngr);*/
+	return NULL;
 }
 
 void* Network::SubjectThread(void* msgParam)
@@ -180,7 +167,7 @@ FastWriter::FastWriter()
 
 std::string FastWriter::write(Value &val)
 {
-
+	return "";
 }
 
 Player::Player()

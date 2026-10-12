@@ -18,84 +18,86 @@
  */
 
 #include <ranking.h>
+#include <sstream>
+#include <iostream>
+#include "../vendor/tree.hh"
 
-Codes::Codes()
+struct Codes::Impl {
+    tree<int> code;
+    tree<int>::iterator root, target;
+};
+
+Codes::Codes() : pImpl(std::make_shared<Impl>())
 {
-    root = code.begin();
-    target = code.insert(root,GRAY);
+    pImpl->root = pImpl->code.begin();
+    pImpl->target = pImpl->code.insert(pImpl->root, GRAY);
 }
 
-Codes::~Codes()
-{
-
-}
+Codes::~Codes() = default;
 
 string Codes::black()
 {
-    if(code.number_of_children(target) == 4) return "Quadros preto/branco demais num quadrante";
-    code.append_child(target,BLACK);
+    if(pImpl->code.number_of_children(pImpl->target) == 4) return "Quadros preto/branco demais num quadrante";
+    pImpl->code.append_child(pImpl->target, BLACK);
     return printTree();
 }
 
 string Codes::white()
 {
-    if(code.number_of_children(target) >= 4) return "Quadros preto/branco demais num quadrante";
-    code.append_child(target,WHITE);
+    if(pImpl->code.number_of_children(pImpl->target) >= 4) return "Quadros preto/branco demais num quadrante";
+    pImpl->code.append_child(pImpl->target, WHITE);
     return printTree();
 }
 
 string Codes::gray()
 {
-    tree<int>::iterator node,source;
-    source = code.insert(code.end()--,GRAY);
-    node = code.append_child(source,GRAY);
-    code.append_child(source,GRAY);
-    code.append_child(source,GRAY);
-    code.move_before(target,source);
-    target = node;
+    tree<int>::iterator node, source;
+    source = pImpl->code.insert(pImpl->code.end()--, GRAY);
+    node = pImpl->code.append_child(source, GRAY);
+    pImpl->code.append_child(source, GRAY);
+    pImpl->code.append_child(source, GRAY);
+    pImpl->code.move_before(pImpl->target, source);
+    pImpl->target = node;
     return printTree();
 }
 
 string Codes::parseCode(std::string text)
 {
-    string::iterator it;
     string message = "";
-    int index = 0;
-    for(it = text.begin(); it < text.end(); it++ ,index++){
-           switch(*it){
-           case 'b':
-               message = white();
-               break;
-           case 'p':
-               message = black();
-               break;
-           case 'c':
-               message = gray();
-               break;
-           default:
-               message = "Token desconhecido!";
-               break;
-           }
+    for(char c : text){
+        switch(c){
+        case 'b':
+            message = white();
+            break;
+        case 'p':
+            message = black();
+            break;
+        case 'c':
+            message = gray();
+            break;
+        default:
+            message = "Token desconhecido!";
+            break;
+        }
     }
     return message;
 }
 
 void Codes::clearTree()
 {
-    code.clear();
+    pImpl->code.clear();
     printTree();
-    root = code.begin();
-    target = code.insert(root,GRAY);
+    pImpl->root = pImpl->code.begin();
+    pImpl->target = pImpl->code.insert(pImpl->root, GRAY);
 }
 
 string Codes::printTree()
 {
     string str = "";
-    vector<int>::iterator it;
     vector<int> v = sourceTree();
-    for(it = v.begin(); it != v.end(); it++){
+    for(int val : v){
         ostringstream oss;
-        oss << (*it);
+        oss << val;
         str.append(oss.str());
     }
     return str;
@@ -104,19 +106,17 @@ string Codes::printTree()
 vector<int> Codes::sourceTree()
 {
     vector<int> v;
-    tree<int>::pre_order_iterator it;
-    for(it = code.begin(); it != code.end(); it++)
+    for(auto it = pImpl->code.begin(); it != pImpl->code.end(); ++it)
         v.push_back(*it);
     return v;
 }
 
 int Codes::blacks()
 {
-    tree<int>::iterator it;
-    vector<int> v;
     int count = 0;
-    for(it = code.begin(); it != code.end(); it++){
+    for(auto it = pImpl->code.begin(); it != pImpl->code.end(); ++it){
         if((*it) == BLACK) count++;
     }
     return count;
 }
+

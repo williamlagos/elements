@@ -21,52 +21,93 @@
 
 template<typename T>
 Matrix<T>::Matrix(int size)
+	: numOfCols(size), numOfRows(size), base(size, vector<T>(size))
 {
-	this->numOfCols = size;
-	this->numOfRows = size;
+}
+
+template<typename T>
+Matrix<T>::Matrix(int cols, int rows, const T& initialValue)
+	: numOfCols(cols), numOfRows(rows), base(cols, vector<T>(rows, initialValue))
+{
+}
+
+template<typename T>
+int Matrix<T>::getCols() const
+{
+	return this->numOfCols;
+}
+
+template<typename T>
+int Matrix<T>::getRows() const
+{
+	return this->numOfRows;
 }
 
 template<typename T>
 void Matrix<T>::createRow()
 {
-	typename vector<vector<T>*>::iterator it;
-	for(it = this->base.begin(); it != this->base.end(); it++){
-		(*it)->resize(numOfRows+1);
+	this->numOfRows += 1;
+	for(auto &col : this->base){
+		col.resize(this->numOfRows);
 	}
 }
+
 template<typename T>
-vector<T> Matrix<T>::createCol()
+void Matrix<T>::createCol()
 {
-	vector<T> col;
-	this->base.push_back(&col);
+	this->base.emplace_back(this->numOfRows);
 	this->numOfCols += 1;
-	return col;
 }
+
 template<typename T>
 void Matrix<T>::clean()
 {
-	
+	this->base.clear();
+	this->numOfCols = 0;
+	this->numOfRows = 0;
 }
+
+template<typename T>
+void Matrix<T>::set(int col, int row, const T& val)
+{
+	if(col >= 0 && col < this->numOfCols && row >= 0 && row < this->numOfRows){
+		this->base[col][row] = val;
+	}
+}
+
+template<typename T>
+T Matrix<T>::get(int col, int row) const
+{
+	if(col >= 0 && col < this->numOfCols && row >= 0 && row < this->numOfRows){
+		return this->base[col][row];
+	}
+	return T();
+}
+
 template<typename T>
 void Matrix<T>::insert(T* item)
 {
-	vector<T> column = this->createCol();
+	if(!item) return;
+	this->createCol();
 	for(int i = 0; i < this->numOfRows; i++){
-		column.push_back((*item));
+		this->base[this->numOfCols - 1][i] = (*item);
 		item++;
 	}
 }
+
 template<typename T>
 void Matrix<T>::remove(T*)
 {
-	
 }
+
 template<typename T>
 void Matrix<T>::search(string)
 {
-	
 }
 
 template class Matrix<int>;
 template class Matrix<float>;
+template class Matrix<double>;
 template class Matrix<bool>;
+template class Matrix<char>;
+template class Matrix<unsigned char>;

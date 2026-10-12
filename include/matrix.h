@@ -30,17 +30,27 @@ using namespace std;
 template<typename T>
 class Matrix{
 private:
-	vector<vector<T>*> base;
+	vector<vector<T>> base;
 	int numOfCols;
 	int numOfRows;
 public:
-	Matrix(int);
-	vector<T> createCol();
+	Matrix(int size = 0);
+	Matrix(int cols, int rows, const T& initialValue = T());
+	int getCols() const;
+	int getRows() const;
+	void createCol();
 	void createRow();
 	void clean();
+	void set(int col, int row, const T& val);
+	T get(int col, int row) const;
 	void insert(T*);
 	void remove(T*);
 	void search(string);
 };
+
+typedef Matrix<int> IntMatrix;
+typedef Matrix<float> FloatMatrix;
+typedef Matrix<double> DoubleMatrix;
+typedef Matrix<bool> BoolMatrix;
 
 #endif /* MATRIX_H */

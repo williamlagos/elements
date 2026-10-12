@@ -49,6 +49,8 @@ _deps
 
 # Specific IDE files
 build
+.build
+elements
 .vscode
 *.xcodeproj
 *.build

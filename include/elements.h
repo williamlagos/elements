@@ -22,7 +22,7 @@
 
 #include <map>
 #include <string>
-//#include <graphics.h>
+#include <vector>
 
 using namespace std;
 
@@ -30,49 +30,58 @@ class Engine {
 private:
     bool status;
 public:
-    Engine(bool);
-    bool getStatus();
+    Engine(bool stat = false);
+    bool getStatus() const;
     int start();
     int stop();
 };
 
-class Element{ //Elements
+class Element{
 private:
-    int* speed;
+    int speedX;
+    int speedY;
     int width;
     int height;
-    int position;
+    int posX;
+    int posY;
     string name;
     double hitPoints;
-//    Geometry* sprImage;
 public:
-    Element(string);
-//    Geometry* spriteImage();
+    Element(string n = "");
     void hurtElement(double);
     void healElement(double);
-    void whichSize(int,int);
-    void whichSpeed(int,int);
-//    void update(Scene*);
+    void whichSize(int, int);
+    void whichSpeed(int, int);
+    void whichPosition(int, int);
+    double getHitPoints() const;
+    string getName() const;
+    int getWidth() const;
+    int getHeight() const;
+    int getSpeedX() const;
+    int getSpeedY() const;
+    int getPositionX() const;
+    int getPositionY() const;
 };
 
 class Elements {
 private:
     Engine* core;
     void* engineHandler;
-    Element* sprites;
-    Element* last;
-    Element* init;
-    int elemCount;
+    std::vector<Element> sprites;
     std::map<void*, bool> gameClasses;
 public:
     Elements();
     Elements(bool);
+    ~Elements();
     int chooseGameClass(int);
     int callelementsModule();
     void* getEngineHandler();
     void* getMicroModule();
     void addElement(std::string);
     void remElement();
+    int getElementCount() const;
+    Element* getElement(int index);
+    const std::vector<Element>& getElements() const;
 };
 
 #endif /* ELEMENTS_H */

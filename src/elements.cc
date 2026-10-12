@@ -25,24 +25,106 @@ Engine::Engine(bool stat)
 }
 int Engine::start()
 {
-    /* Option not implemented already */
     return 0;
 }
 int Engine::stop()
 {
-    /* Option not implemented already */
     return 0;
 }
-bool Engine::getStatus()
+bool Engine::getStatus() const
 {
     return status;
 }
 
-Elements::Elements(bool status)
+Element::Element(std::string n)
+    : speedX(0), speedY(0), width(16), height(16), posX(0), posY(0), name(n), hitPoints(100.0)
 {
-    core = new Engine(status);
-    gameClasses.insert(std::pair<void*,bool>((void*)core,core->getStatus()));
 }
+
+void Element::hurtElement(double hurtPoints)
+{
+    hitPoints -= hurtPoints;
+}
+
+void Element::healElement(double healPoints)
+{
+    hitPoints += healPoints;
+}
+
+void Element::whichSize(int newWidth, int newHeight)
+{
+    width = newWidth;
+    height = newHeight;
+}
+
+void Element::whichSpeed(int xAxis, int yAxis)
+{
+    speedX = xAxis;
+    speedY = yAxis;
+}
+
+void Element::whichPosition(int x, int y)
+{
+    posX = x;
+    posY = y;
+}
+
+double Element::getHitPoints() const
+{
+    return hitPoints;
+}
+
+string Element::getName() const
+{
+    return name;
+}
+
+int Element::getWidth() const
+{
+    return width;
+}
+
+int Element::getHeight() const
+{
+    return height;
+}
+
+int Element::getSpeedX() const
+{
+    return speedX;
+}
+
+int Element::getSpeedY() const
+{
+    return speedY;
+}
+
+int Element::getPositionX() const
+{
+    return posX;
+}
+
+int Element::getPositionY() const
+{
+    return posY;
+}
+
+Elements::Elements()
+    : core(new Engine(false)), engineHandler(nullptr)
+{
+}
+
+Elements::Elements(bool status)
+    : core(new Engine(status)), engineHandler(nullptr)
+{
+    gameClasses.insert(std::pair<void*,bool>((void*)core, core->getStatus()));
+}
+
+Elements::~Elements()
+{
+    delete core;
+}
+
 int Elements::chooseGameClass(int gameType)
 {
     switch(gameType){
@@ -52,81 +134,49 @@ int Elements::chooseGameClass(int gameType)
     }
     return 0;
 }
+
 int Elements::callelementsModule()
 {
-    /* Option not implemented already */
     return 0;
 }
+
 void* Elements::getEngineHandler()
 {
     return engineHandler;
 }
+
 void* Elements::getMicroModule()
 {
     return NULL;
 }
 
-Element::Element(std::string n)
-{
-    name = n;
-//    sprImage = spriteImage();
-}
-
-/*Geometry* Element::spriteImage()
-{
-    Geometry* sprImg = new Geometry();
-    return sprImg;
-}*/
-
-void Element::hurtElement(double hurtPoints)
-{
-    hitPoints -= hurtPoints;
-}
-void Element::healElement(double healPoints)
-{
-    hitPoints += healPoints;
-}
-void Element::whichSize(int newWidth, int newHeight)
-{
-    width = newWidth;
-    height = newHeight;
-}
-void Element::whichSpeed(int xAxis, int yAxis)
-{
-    speed = &xAxis;
-    speed++;
-    speed = &yAxis;
-}
-/*void Element::update(Scene* sce)
-{
-    sce->drawScene();
-}*/
-
-Elements::Elements()
-{
-//    Scene *sce = new Scene();
-    elemCount = 0;
-}
-
 void Elements::addElement(std::string n)
 {
-    if(sprites){
-        sprites++;
-        sprites = new Element(n);
-        last = sprites;
-    }else{
-        init = sprites;
-        sprites = new Element(n);
-    }
-    elemCount++;
+    sprites.emplace_back(n);
 }
+
 void Elements::remElement()
 {
-    Element* removed;
-    if(sprites){
-        removed = last;
-        delete removed;
-        last--; elemCount--;
+    if(!sprites.empty()){
+        sprites.pop_back();
     }
+}
+
+int Elements::getElementCount() const
+{
+    return static_cast<int>(sprites.size());
+}
+
+Element* Elements::getElement(int index)
+{
+    if(index >= 0 && index < static_cast<int>(sprites.size())){
+        return &sprites[index];
+    }
+    return nullptr;
+}
+
+const std::vector<Element>& Elements::getElements() const
+{
+    return sprites;
 }
 

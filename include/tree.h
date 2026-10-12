@@ -44,14 +44,18 @@ class Content {
 private:
     string name;
 public:
-    string getName();
+    Content(string n = "") : name(n) {}
+    string getName() const;
+    void setName(string n);
 };
 
 class Tree{
 private:
     Node* root;
+    void destroy(Node* node);
 public:
     Tree(){ root = NULL; }
+    ~Tree();
     Node* getRoot(){ return root; }
     bool isEmpty() const { return root==NULL; }
     void print(int);

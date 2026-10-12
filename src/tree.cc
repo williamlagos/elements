@@ -21,12 +21,29 @@
 
 using namespace std;
 
-string Content::getName() {
+string Content::getName() const {
     return this->name;
+}
+
+void Content::setName(string n) {
+    this->name = n;
+}
+
+Tree::~Tree() {
+    destroy(root);
+}
+
+void Tree::destroy(Node* node) {
+    if (node) {
+        destroy(node->left);
+        destroy(node->right);
+        delete node;
+    }
 }
 
 void Tree::insert(Content* content)
 {
+    if (!content) return;
     Node* nod = new Node;
     Node* parent;
     nod->data = content;
@@ -39,10 +56,10 @@ void Tree::insert(Content* content)
         current = root;
         while(current){
             parent = current;
-            if(nod->data > current->data) current = current->right;
+            if(nod->data->getName() > current->data->getName()) current = current->right;
             else current = current->left;
         }
-        if(nod->data < parent->data)
+        if(nod->data->getName() < parent->data->getName())
             parent->left = nod;
         else
             parent->right = nod;

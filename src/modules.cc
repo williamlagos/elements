@@ -24,7 +24,7 @@ Info infoVer;
 
 string Error::getMessage()
 {
-  
+	return "";
 }
 
 
@@ -86,22 +86,20 @@ int Handler::newPackage(int times)
 		Package lay;
 		baseStr.pakStack.push(lay);
 	}
+	return times;
 }
 
 Package Handler::accessPackage(string value)
 {
-	stack<Package> stackTemp = baseStr.pakStack;
-	while(!stackTemp.empty()){
-		//if(name.compare(stackTemp.top().getName()) == 0){
-			return stackTemp.top();
-		//}
+	if(!baseStr.pakStack.empty()){
+		return baseStr.pakStack.top();
 	}
-	stackTemp.pop();
+	return Package();
 }
 
 void Handler::createGame(string gamName)
 {
-    Content *newGame = new Content();
+	Content *newGame = new Content(gamName);
 	baseStr.mainTree.insert(newGame);
 }
 
@@ -114,6 +112,7 @@ int Handler::exeModule(string name)
 {
 	Module mod(name,true);
 	baseStr.modExec.push(mod);
+	return 0;
 }
 
 void Handler::listModules()
