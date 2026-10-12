@@ -5,7 +5,8 @@ let package = Package(
     name: "elements",
     platforms: [
         .macOS(.v13),
-        .iOS(.v16)
+        .iOS(.v16),
+        .tvOS(.v16)
     ],
     products: [
         .library(
