@@ -36,3 +36,9 @@ target_include_directories(elements_core PUBLIC include vendor)
 
 add_executable(elements src/main.cc)
 target_link_libraries(elements PRIVATE elements_core)
+
+find_package(pybind11 CONFIG QUIET)
+if (pybind11_FOUND)
+    pybind11_add_module(_elements src/bindings.cc)
+    target_link_libraries(_elements PRIVATE elements_core)
+endif()

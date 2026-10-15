@@ -51,6 +51,7 @@ _deps
 build
 .build
 elements
+*.egg-info
 .vscode
 *.xcodeproj
 *.build
